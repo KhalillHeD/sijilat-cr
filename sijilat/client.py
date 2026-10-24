@@ -153,8 +153,32 @@ class SijilatClient:
 
     # ---- public interface (same as FileFetcher) ----------------------------------
     def search(self, cr_no: str, lang: str = "EN") -> dict:
-        return self._post_api(config.SEARCH_URL, build_search_body(cr_no, lang),
-                              encrypted=False, what="search")
+        """Every page of the search, merged into ONE response shaped like a single page,
+        so the parser and the saved files do not need to know about paging."""
+        first = self._post_api(config.SEARCH_URL, build_search_body(cr_no, lang, page=1),
+                               encrypted=False, what="search")
+        data = first.get("jsonData")
+        if not isinstance(data, dict) or not isinstance(data.get("CR_list"), list):
+            return first                                  # let the parser report it
+        rows = data["CR_list"]
+        try:
+            total = int(data.get("Total_Records"))
+        except (TypeError, ValueError):
+            return first
+        seen = {(r.get("CR_NO"), r.get("BRANCH_NO")) for r in rows if isinstance(r, dict)}
+        page = 1
+        while len(rows) < total and page < config.MAX_SEARCH_PAGES:
+            page += 1
+            nxt = self._post_api(config.SEARCH_URL, build_search_body(cr_no, lang, page=page),
+                                 encrypted=False, what=f"search page {page}")
+            new = [r for r in ((nxt.get("jsonData") or {}).get("CR_list") or [])
+                   if isinstance(r, dict) and (r.get("CR_NO"), r.get("BRANCH_NO")) not in seen]
+            if not new:                                   # source stopped giving new rows
+                break
+            seen.update((r.get("CR_NO"), r.get("BRANCH_NO")) for r in new)
+            rows.extend(new)
+        log.info("search: %d of %d rows in %d page(s)", len(rows), total, page)
+        return first
 
     def details(self, cr_no: str, branch_no: str, lang: str = "EN") -> dict:
         session_id = self._ensure_session_id(cr_no, branch_no)

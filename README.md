@@ -1,0 +1,227 @@
+# Sijilat CR prototype
+
+A small Python prototype that takes a Bahrain commercial-registration (CR) number, collects
+five fields for every branch from the public Sijilat registry (sijilat.bh), and writes
+structured JSON.
+
+**Business used:** CR **931** (Asia Jewellers B.S.C. Closed and related trade names). It has
+**30 branches**, including active, deleted and merged ones, which makes it a good test of
+branch handling.
+
+**Time spent:** TODO (you): about _h _min.
+
+---
+
+## 1. How to run
+
+Requirements: Python 3.10+ (developed on 3.14, Windows 11).
+
+```powershell
+python -m venv .venv
+.\.venv\Scripts\Activate.ps1          # macOS/Linux: source .venv/bin/activate
+pip install -r requirements.txt       # requests, pycryptodome (+ pytest for tests)
+```
+
+**Live runs need two values** that the site's own public JavaScript uses for anonymous
+visitors (see section 2). Copy `.env.example` to `.env` and fill them in. `.env` is never
+committed or submitted.
+
+| Command | What it does |
+|---|---|
+| `python -m sijilat.cli --cr 931` | Live run, all branches → `output/931.json` |
+| `python -m sijilat.cli --cr 931 --branch 5` | One branch only |
+| `python -m sijilat.cli --cr 931 --save-raw samples` | Live run that also saves the (minimised) raw responses |
+| `python -m sijilat.cli --cr 931 --from-dir samples` | **Offline** replay from saved responses (no keys needed) |
+| `python -m sijilat.cli --cr 931 --from-dir samples --simulate-failure details --simulate-branch 5` | **Simulated** failure of one branch |
+| `python -m sijilat.compare output/run1.json output/run2.json` | Field-by-field comparison of two runs |
+| `python -m pytest -q` | Tests (offline, use `samples/`) |
+
+Exit codes: `0` success · `1` failed · `2` partial · `3` not found · `4` configuration error.
+
+## 2. Approach
+
+**Investigation.** The public "Search CR" pages render their data with JavaScript from a JSON
+API, so the HTML contains no data to parse. Using the browser's DevTools network tab on the
+public pages, I found the sequence the browser itself performs:
+
+1. `GET` the public details page → a per-visit `SessionID` embedded in the page script.
+2. `POST api.sijilat.bh/token` → an anonymous bearer token (~30 min). The password is an HMAC
+   computed by the page's own script from values in its public `js/config.js`.
+3. `POST …/AdvanceSearchCR_Paging` (plain JSON) → the list of branches for the CR (paged, 10/page).
+4. `POST …/CompleteCRDetails` (body AES-encrypted in the browser with CryptoJS; the passphrase is
+   a literal in the public script) → name, status, address and activities for one branch.
+
+The prototype repeats these calls exactly as the browser does. **It uses no login, no
+credentials of a person and nothing that is not delivered to every anonymous visitor.** The two
+values are kept out of the code (in `.env`) because they are the site's, not because they are
+private. I chose this over HTML scraping or browser automation because it is faster, more
+stable to parse (structured JSON rather than rendered text), and lets me tell "the source has
+no value" apart from "my code failed". A headless browser (Playwright) would be the
+conservative fallback if the site objected to direct API use or changed its scheme.
+
+**Field statuses.** Every field has a `status` and a `value`:
+
+| Status | Meaning |
+|---|---|
+| `ok` | Found and extracted. Individual blank sub-parts (e.g. no road name) are `null`. |
+| `absent_in_source` | The source answered, but has no value (e.g. `businessActivities: null`). |
+| `not_retrieved` | We never got the data (network, HTTP, API error). |
+| `extraction_failed` | We got a response but it was not in the expected structure. |
+
+**Branches.** One record per branch, keyed by `branch_id`, each with its own `source_url`
+(the public page for that branch). A failure on one branch never removes another. If the
+details call for a branch fails, four of the fields fall back to the search row (marked
+`origin: "search"`) and the address, which only exists in the details call, is `not_retrieved`.
+
+**Outcome.** Branch: `success` (every field `ok` or `absent_in_source`) / `partial` / `failed`.
+Run: `success` / `partial` / `failed` / `not_found`, plus `notes` explaining any non-success.
+
+**Example (abridged):**
+
+```json
+{
+  "cr_number": "931",
+  "source": "https://www.sijilat.bh",
+  "collected_at": "2026-10-24T18:00:32Z",
+  "mode": "live",
+  "outcome": "success",
+  "notes": [],
+  "branches": [
+    {
+      "branch_id": "6",
+      "source_url": "https://www.sijilat.bh/public-search-cr/search-cr-3.aspx?cr_no=931&branch_no=6",
+      "outcome": "success",
+      "commercial_name": {"status": "ok", "value": {"en": "PHOENICIA DECOR", "ar": "فينيسيا ديكور"}},
+      "registration": {"status": "ok", "value": {"cr_number": "931", "branch_id": "6"}},
+      "registration_status": {"status": "ok", "value": "DELETED - MERGED WITH ANOTHER BRANCH"},
+      "business_activities": {"status": "absent_in_source", "value": null, "detail": "'businessActivities' is null"},
+      "commercial_address": {"status": "ok", "value": {"flat": "0", "building": "678", "road": "3918", "road_name": "ROAD 3918", "block": "439", "town": "NORTH SEHLA", "po_box": "861"}}
+    }
+  ]
+}
+```
+
+Activities carry both `activity_code` (Sijilat's internal activity ID) and `isic4_code`
+(ISIC Rev.4 with Bahraini local suffixes, e.g. `469-1`).
+
+**Assumptions**
+- The CR number is entered without the branch suffix; all branches are collected unless `--branch` is given.
+- English (`EN`) is the default language; names are returned in both English and Arabic anyway.
+- The details response is plain JSON (verified live; only the request body is encrypted).
+- An unknown CR returns `jsonData: []` with "No Data Found." (verified live with CR 99999999), which is treated as `not_found`, not as an error.
+
+**Manual steps:** reading the site's network calls and `config.js` in DevTools; choosing the CR;
+copying the two values into `.env`; the manual comparison in section 3.
+
+**Politeness and data minimisation:** at most 1 request/second, one retry, identifying
+User-Agent, a hard cap of 20 search pages. Only the five requested fields are read. The live
+responses also contain shareholders, signatories, board members, IBAN, e-mail and phone
+numbers; **the saved files in `samples/` keep only the keys the parser uses**, so none of that
+personal data is stored or submitted.
+
+## 3. Verification
+
+**What ran where**
+
+| Demonstration | Source | File |
+|---|---|---|
+| Full collection, 30 branches | **Live** | `output/run1.json` |
+| Repeat run, same CR | **Live** | `output/run2.json` |
+| Unknown CR (real, not simulated) | **Live** | `output/not_found_99999999.json` |
+| Replay of saved responses | Local (`samples/`) | `output/replay_from_samples.json` |
+| Failure of branch 5's details call | Local, **SIMULATED** | `output/simulated_failure_branch5.json` |
+| 17 automated tests | Local | `tests/` |
+
+No access obstacle was hit; everything in the live rows ran against sijilat.bh.
+
+**Repeat run:** `python -m sijilat.compare output/run1.json output/run2.json` gives
+`30 vs 30 branches … RESULT: identical data` (only `collected_at` differs: 18:00:32Z vs
+18:01:20Z). The live run and the offline replay are also identical (`--ignore-mode`), which
+shows the minimised samples lose nothing the output needs.
+
+**Simulated failure** (clearly marked `"simulated": true` in the file and in the note): branch 5
+becomes `partial`. Its address is `not_retrieved`, and the name, registration, status and
+activities come from the search row (`origin: "search"`). The other 29 branches stay `success`.
+
+**Tests:** `python -m pytest -q` → `17 passed`. They cover each status rule, the real
+"no activities" case (branch 6), the "No Data Found" case, malformed responses, the simulated
+failures, determinism and the crypto round trip.
+
+**Manual comparison against the website.** TODO (you): open each page in a browser and fill in the table.
+
+| Branch | Field | Website shows | JSON | Match? / note |
+|---|---|---|---|---|
+| 1 | Name / status / activities / address | | | |
+| 6 | Status (deleted, merged), activities | | | |
+| 13 | Address (no flat, no P.O. box) | | | |
+
+Differences found: TODO (you). Points worth checking: whether `flat: "0"` shows as 0 or blank
+on the page, and town spelling.
+
+## 4. Known limitations
+
+- **Depends on the site's client-side scheme.** If the token values, the encryption or the
+  endpoint shapes change, live runs fail cleanly (`not_retrieved` / `failed` with a note), and
+  the code must be updated. No HTML parsing of the rendered page is used as a fallback.
+- **Branch numbers are not contiguous** (931 has 1 and 5–33; 2–4 are not listed by the source).
+  The prototype reports what the source lists and does not guess the missing ones.
+- **Source data is reproduced as is**: `"0"` used for "no flat", mixed English/Arabic town
+  names (`AL SEEF/السيف`), inconsistent spelling (`AL-SEEF` vs `AL SEEF`). Nothing is
+  normalised or translated.
+- Up to 200 branches (20 search pages); beyond that the run is `partial` with a note.
+- Not tested: Arabic-language mode (`--lang AR`) on all fields; very large CRs; rate limits under load.
+- No scheduled runs, change history or database. Each run is a single JSON snapshot.
+
+## 5. Value, human review and measurement
+
+**What it could replace:** the manual lookup an analyst does for KYC, onboarding or due
+diligence: searching the CR, opening each branch page, and copying name, status,
+activities and address into a file. For a multi-branch CR like 931 that is 30 pages by hand;
+the prototype does it in about 40 seconds with a source link per branch.
+
+**What still needs human review:**
+- Interpreting status (e.g. "DELETED WITH PAYMENT" vs "MERGED") and its consequence for a decision.
+- Matching a CR to the right real-world entity when names are similar or have changed.
+- Anything marked other than `ok`, and any `warnings` (search vs details disagree).
+- Information beyond these five fields (ownership, signatories), which is deliberately out of scope.
+
+**How to measure value:**
+- *Time:* minutes per CR, manual vs prototype plus review, on a sample of 20–50 CRs.
+- *Accuracy:* field-level agreement with a manual double check on a random sample; target ≥ 99% on `ok` fields.
+- *Coverage:* share of fields `ok` vs `not_retrieved` / `extraction_failed` over many runs (the
+  latter two are our failures and should trend to 0).
+- *Robustness:* how often the run breaks over weeks (source changes), and time to fix.
+
+## 6. Tools, and whether AI adds value
+
+- **Python + `requests`**: simple, explicit HTTP with sessions and cookies.
+- **`pycryptodome`**: reproduces the browser's CryptoJS AES encryption exactly.
+- **No browser automation and no LLM at run time.** This is deterministic extraction from
+  structured JSON. An LLM in the pipeline would add cost, latency and the risk of invented or
+  altered values, with no benefit, because the fields are already labelled.
+- **Where AI helps:** during development (reading the site's JavaScript, writing and
+  reviewing code, listing edge cases), and possibly later on top of the output (summarising
+  activities, flagging unusual status changes), always with the source values kept unchanged.
+
+## 7. AI assistance
+
+TODO (you): state honestly what you used and what you checked yourself. For example:
+- AI assistant (Claude) used for: …
+- Verified myself: the network calls in DevTools, the live runs, the manual comparison in section 3, …
+
+## 8. Remaining work and next step
+
+- Fill in the manual comparison for more branches and fields.
+- Next step: run against a sample of 20–50 CRs to measure coverage and accuracy, and add a
+  scheduled re-run with change detection (`compare.py` is the starting point).
+- Add a Playwright fallback that reads the rendered public page if the API scheme changes.
+
+## Project layout
+
+```
+sijilat/   cli.py  pipeline.py  parser.py  client.py  payloads.py  crypto.py
+           fetchers.py (file replay, recording, simulated failure)  compare.py  config.py  models.py
+samples/   minimised raw responses saved from the live run (used by replay and tests)
+output/    sample outputs listed in section 3
+tests/     pytest tests (offline)
+```

@@ -46,9 +46,10 @@ class FieldResult:
     origin: str | None = None   # "details" or "search": which endpoint it came from
 
     def to_dict(self) -> dict:
+        """Lean form: `detail` only when not ok, `origin` only for the search fallback."""
         d: dict = {"status": self.status, "value": self.value}
-        if self.detail:
+        if self.detail and self.status != OK:
             d["detail"] = self.detail
-        if self.origin:
-            d["origin"] = self.origin
+        if self.origin == "search":
+            d["origin"] = "search"
         return d

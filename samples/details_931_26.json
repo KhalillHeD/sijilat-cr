@@ -1,0 +1,39 @@
+{
+  "Status_Code": "200",
+  "Status_Message": "Success",
+  "jsonData": {
+    "company_summary": {
+      "CR_NO": "931",
+      "BRANCH_NO": "26",
+      "CR_LNM": "ASIA JEWELLERS B.S.C CLOSED",
+      "CR_ANM": "مجوهرات آسيا ش.م.ب مقفلة",
+      "STATUS": "ACTIVE"
+    },
+    "commercialAddress": {
+      "CR_FLAT": "2035",
+      "CR_BULD": "166",
+      "CR_ROAD": "6403",
+      "CR_ROAD_NM": "",
+      "CR_BLOCK": "264",
+      "CR_TOWN_NM": "DIYAR AL MUHARRAQ",
+      "CR_PBOX": "861"
+    },
+    "businessActivities": [
+      {
+        "ACT_CD": "200360",
+        "ISIC4_CD": "469-1",
+        "ISIC4_NM": "General Trade "
+      },
+      {
+        "ACT_CD": "200681",
+        "ISIC4_CD": "47733-1",
+        "ISIC4_NM": "Sale/Trade of jewellery and related articles - Gold and Precious Jewellery"
+      },
+      {
+        "ACT_CD": "200481",
+        "ISIC4_CD": "5610-1",
+        "ISIC4_NM": "Food and beverage service activities"
+      }
+    ]
+  }
+}

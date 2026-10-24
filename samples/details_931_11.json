@@ -1,0 +1,44 @@
+{
+  "Status_Code": "200",
+  "Status_Message": "Success",
+  "jsonData": {
+    "company_summary": {
+      "CR_NO": "931",
+      "BRANCH_NO": "11",
+      "CR_LNM": "ASIA JEWELLERY B.S.C CLOSED",
+      "CR_ANM": "مجوهرات آسيا ش.م.ب مقفلة",
+      "STATUS": "ACTIVE"
+    },
+    "commercialAddress": {
+      "CR_FLAT": "28",
+      "CR_BULD": "20",
+      "CR_ROAD": "383",
+      "CR_ROAD_NM": "government avenue",
+      "CR_BLOCK": "316",
+      "CR_TOWN_NM": "MANAMA CENTER",
+      "CR_PBOX": "861"
+    },
+    "businessActivities": [
+      {
+        "ACT_CD": "200681",
+        "ISIC4_CD": "47733-1",
+        "ISIC4_NM": "Sale/Trade of jewellery and related articles - Gold and Precious Jewellery"
+      },
+      {
+        "ACT_CD": "200377",
+        "ISIC4_CD": "47612",
+        "ISIC4_NM": "Sale/Trade of Stationary, arts and crafts, and office/professional tools and apparatus"
+      },
+      {
+        "ACT_CD": "200382",
+        "ISIC4_CD": "4771",
+        "ISIC4_NM": "Sale/Trade of clothing, footwear, apparel accessories, and leather articles"
+      },
+      {
+        "ACT_CD": "200381",
+        "ISIC4_CD": "4764",
+        "ISIC4_NM": "Sale/Trade of games and toys"
+      }
+    ]
+  }
+}

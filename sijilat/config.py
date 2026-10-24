@@ -1,9 +1,26 @@
-"""Settings. Constants only; the two secrets come from environment variables.
+"""Settings. Constants only; the two secrets come from environment variables
+(or a local, git-ignored .env file in the folder you run from).
 
 PRODUCTION ONLY: config.js on the site lists many other environments (dev, test,
 internal IPs, localhost). This prototype never talks to any of them.
 """
 import os
+from pathlib import Path
+
+
+def _load_dotenv(path: Path = Path(".env")) -> None:
+    """Read KEY=VALUE lines from .env into os.environ. Real environment variables win."""
+    if not path.is_file():
+        return
+    for line in path.read_text(encoding="utf-8").splitlines():
+        line = line.strip()
+        if not line or line.startswith("#") or "=" not in line:
+            continue
+        key, value = line.split("=", 1)
+        os.environ.setdefault(key.strip(), value.strip().strip('"').strip("'"))
+
+
+_load_dotenv()
 
 SITE = "https://www.sijilat.bh"
 API = "https://api.sijilat.bh"
@@ -23,6 +40,7 @@ TIMEOUT = (5, 30)                # (connect, read) seconds
 RETRIES = 1                      # one retry on network error or HTTP 5xx
 RETRY_BACKOFF_SECONDS = 2.0
 TOKEN_REFRESH_MARGIN_SECONDS = 60
+MAX_SEARCH_PAGES = 20            # safety cap: 20 pages x 10 rows = 200 branches
 
 
 class MissingSecret(RuntimeError):

@@ -71,6 +71,10 @@ def parse_search(raw) -> SearchResult:
     if not isinstance(raw, dict):
         raise ExtractionError("search response is not an object")
     data = raw.get("jsonData")
+    # Observed live (CR 99999999): an unknown CR gives Status_Code 200, jsonData [] and
+    # Message "No Data Found." That is the source saying "nothing here", not a broken response.
+    if data in ([], None) and "jsonData" in raw:
+        return SearchResult(rows=[], total=0)
     if not isinstance(data, dict):
         raise ExtractionError("'jsonData' missing or not an object")
     rows = data.get("CR_list")

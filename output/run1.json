@@ -1,0 +1,1560 @@
+{
+  "cr_number": "931",
+  "source": "https://www.sijilat.bh",
+  "collected_at": "2026-10-24T18:00:32Z",
+  "mode": "live",
+  "outcome": "success",
+  "notes": [],
+  "branches": [
+    {
+      "branch_id": "1",
+      "source_url": "https://www.sijilat.bh/public-search-cr/search-cr-3.aspx?cr_no=931&branch_no=1",
+      "outcome": "success",
+      "commercial_name": {
+        "status": "ok",
+        "value": {
+          "en": "ASIA JEWELLERS B.S.C CLOSED",
+          "ar": "مجوهرات اسيا ش.م.ب مقفلة"
+        }
+      },
+      "registration": {
+        "status": "ok",
+        "value": {
+          "cr_number": "931",
+          "branch_id": "1"
+        }
+      },
+      "registration_status": {
+        "status": "ok",
+        "value": "ACTIVE"
+      },
+      "business_activities": {
+        "status": "ok",
+        "value": [
+          {
+            "activity_code": "200360",
+            "isic4_code": "469-1",
+            "name": "General Trade"
+          },
+          {
+            "activity_code": "200681",
+            "isic4_code": "47733-1",
+            "name": "Sale/Trade of jewellery and related articles - Gold and Precious Jewellery"
+          },
+          {
+            "activity_code": "200498",
+            "isic4_code": "64991",
+            "name": "Selling and buying shares and securities for company’s account only"
+          },
+          {
+            "activity_code": "200068",
+            "isic4_code": "681",
+            "name": "Real estate activities with own or leased property"
+          }
+        ]
+      },
+      "commercial_address": {
+        "status": "ok",
+        "value": {
+          "flat": "133",
+          "building": "20",
+          "road": "383",
+          "road_name": null,
+          "block": "316",
+          "town": "MANAMA CENTER",
+          "po_box": "861"
+        }
+      }
+    },
+    {
+      "branch_id": "5",
+      "source_url": "https://www.sijilat.bh/public-search-cr/search-cr-3.aspx?cr_no=931&branch_no=5",
+      "outcome": "success",
+      "commercial_name": {
+        "status": "ok",
+        "value": {
+          "en": "ASIA JEWELLERS B.S.C CLOSED",
+          "ar": "مجوهرات اسيا ش.م.ب مقفلة"
+        }
+      },
+      "registration": {
+        "status": "ok",
+        "value": {
+          "cr_number": "931",
+          "branch_id": "5"
+        }
+      },
+      "registration_status": {
+        "status": "ok",
+        "value": "ACTIVE"
+      },
+      "business_activities": {
+        "status": "ok",
+        "value": [
+          {
+            "activity_code": "200382",
+            "isic4_code": "4771",
+            "name": "Sale/Trade of clothing, footwear, apparel accessories, and leather articles"
+          },
+          {
+            "activity_code": "200215",
+            "isic4_code": "9529",
+            "name": "Repair of other personal and household goods"
+          },
+          {
+            "activity_code": "200360",
+            "isic4_code": "469-1",
+            "name": "General Trade"
+          },
+          {
+            "activity_code": "200681",
+            "isic4_code": "47733-1",
+            "name": "Sale/Trade of jewellery and related articles - Gold and Precious Jewellery"
+          }
+        ]
+      },
+      "commercial_address": {
+        "status": "ok",
+        "value": {
+          "flat": "127",
+          "building": "20",
+          "road": "383",
+          "road_name": null,
+          "block": "316",
+          "town": "MANAMA CENTER",
+          "po_box": "861"
+        }
+      }
+    },
+    {
+      "branch_id": "6",
+      "source_url": "https://www.sijilat.bh/public-search-cr/search-cr-3.aspx?cr_no=931&branch_no=6",
+      "outcome": "success",
+      "commercial_name": {
+        "status": "ok",
+        "value": {
+          "en": "PHOENICIA DECOR",
+          "ar": "فينيسيا ديكور"
+        }
+      },
+      "registration": {
+        "status": "ok",
+        "value": {
+          "cr_number": "931",
+          "branch_id": "6"
+        }
+      },
+      "registration_status": {
+        "status": "ok",
+        "value": "DELETED - MERGED WITH ANOTHER BRANCH"
+      },
+      "business_activities": {
+        "status": "absent_in_source",
+        "value": null,
+        "detail": "'businessActivities' is null"
+      },
+      "commercial_address": {
+        "status": "ok",
+        "value": {
+          "flat": "0",
+          "building": "678",
+          "road": "3918",
+          "road_name": "ROAD 3918",
+          "block": "439",
+          "town": "NORTH SEHLA",
+          "po_box": "861"
+        }
+      }
+    },
+    {
+      "branch_id": "7",
+      "source_url": "https://www.sijilat.bh/public-search-cr/search-cr-3.aspx?cr_no=931&branch_no=7",
+      "outcome": "success",
+      "commercial_name": {
+        "status": "ok",
+        "value": {
+          "en": "CARTIER BOUTIQUE B.S.C CLOSED",
+          "ar": "بوتيك كارتيه ش.م.ب مقفلة"
+        }
+      },
+      "registration": {
+        "status": "ok",
+        "value": {
+          "cr_number": "931",
+          "branch_id": "7"
+        }
+      },
+      "registration_status": {
+        "status": "ok",
+        "value": "ACTIVE"
+      },
+      "business_activities": {
+        "status": "ok",
+        "value": [
+          {
+            "activity_code": "200681",
+            "isic4_code": "47733-1",
+            "name": "Sale/Trade of jewellery and related articles - Gold and Precious Jewellery"
+          },
+          {
+            "activity_code": "200381",
+            "isic4_code": "4764",
+            "name": "Sale/Trade of games and toys"
+          },
+          {
+            "activity_code": "200377",
+            "isic4_code": "47612",
+            "name": "Sale/Trade of Stationary, arts and crafts, and office/professional tools and apparatus"
+          },
+          {
+            "activity_code": "200382",
+            "isic4_code": "4771",
+            "name": "Sale/Trade of clothing, footwear, apparel accessories, and leather articles"
+          }
+        ]
+      },
+      "commercial_address": {
+        "status": "ok",
+        "value": {
+          "flat": "2016",
+          "building": "166",
+          "road": "6403",
+          "road_name": null,
+          "block": "264",
+          "town": "DIYAR AL MUHARRAQ/ديار المحرق",
+          "po_box": null
+        }
+      }
+    },
+    {
+      "branch_id": "8",
+      "source_url": "https://www.sijilat.bh/public-search-cr/search-cr-3.aspx?cr_no=931&branch_no=8",
+      "outcome": "success",
+      "commercial_name": {
+        "status": "ok",
+        "value": {
+          "en": "ASIA JEWELLERY B.S.C CLOSED",
+          "ar": "مجوهرات اسيا ش.م.ب مقفلة"
+        }
+      },
+      "registration": {
+        "status": "ok",
+        "value": {
+          "cr_number": "931",
+          "branch_id": "8"
+        }
+      },
+      "registration_status": {
+        "status": "ok",
+        "value": "ACTIVE"
+      },
+      "business_activities": {
+        "status": "ok",
+        "value": [
+          {
+            "activity_code": "200377",
+            "isic4_code": "47612",
+            "name": "Sale/Trade of Stationary, arts and crafts, and office/professional tools and apparatus"
+          },
+          {
+            "activity_code": "200681",
+            "isic4_code": "47733-1",
+            "name": "Sale/Trade of jewellery and related articles - Gold and Precious Jewellery"
+          },
+          {
+            "activity_code": "200381",
+            "isic4_code": "4764",
+            "name": "Sale/Trade of games and toys"
+          },
+          {
+            "activity_code": "200382",
+            "isic4_code": "4771",
+            "name": "Sale/Trade of clothing, footwear, apparel accessories, and leather articles"
+          }
+        ]
+      },
+      "commercial_address": {
+        "status": "ok",
+        "value": {
+          "flat": "21",
+          "building": "110",
+          "road": "40",
+          "road_name": null,
+          "block": "428",
+          "town": "AL SEEF/السيف",
+          "po_box": "861"
+        }
+      }
+    },
+    {
+      "branch_id": "9",
+      "source_url": "https://www.sijilat.bh/public-search-cr/search-cr-3.aspx?cr_no=931&branch_no=9",
+      "outcome": "success",
+      "commercial_name": {
+        "status": "ok",
+        "value": {
+          "en": "ASIA JEWELLERY B.S.C CLOSED",
+          "ar": "مجوهرات اسيا ش.م.ب مقفلة"
+        }
+      },
+      "registration": {
+        "status": "ok",
+        "value": {
+          "cr_number": "931",
+          "branch_id": "9"
+        }
+      },
+      "registration_status": {
+        "status": "ok",
+        "value": "ACTIVE"
+      },
+      "business_activities": {
+        "status": "ok",
+        "value": [
+          {
+            "activity_code": "200377",
+            "isic4_code": "47612",
+            "name": "Sale/Trade of Stationary, arts and crafts, and office/professional tools and apparatus"
+          },
+          {
+            "activity_code": "200681",
+            "isic4_code": "47733-1",
+            "name": "Sale/Trade of jewellery and related articles - Gold and Precious Jewellery"
+          },
+          {
+            "activity_code": "200382",
+            "isic4_code": "4771",
+            "name": "Sale/Trade of clothing, footwear, apparel accessories, and leather articles"
+          }
+        ]
+      },
+      "commercial_address": {
+        "status": "ok",
+        "value": {
+          "flat": "104",
+          "building": "2210",
+          "road": "2827",
+          "road_name": "ROAD 2827",
+          "block": "428",
+          "town": "AL-SEEF",
+          "po_box": "861"
+        }
+      }
+    },
+    {
+      "branch_id": "10",
+      "source_url": "https://www.sijilat.bh/public-search-cr/search-cr-3.aspx?cr_no=931&branch_no=10",
+      "outcome": "success",
+      "commercial_name": {
+        "status": "ok",
+        "value": {
+          "en": "MAHMOOD EBRAHIM JAFFAR B.S.C CLOSED",
+          "ar": "محمود ابراهيم جعفر ش.م.ب مقفلة"
+        }
+      },
+      "registration": {
+        "status": "ok",
+        "value": {
+          "cr_number": "931",
+          "branch_id": "10"
+        }
+      },
+      "registration_status": {
+        "status": "ok",
+        "value": "DELETED WITH PAYMENT"
+      },
+      "business_activities": {
+        "status": "ok",
+        "value": [
+          {
+            "activity_code": "200315",
+            "isic4_code": "16225",
+            "name": "Carpentry Workshop"
+          }
+        ]
+      },
+      "commercial_address": {
+        "status": "ok",
+        "value": {
+          "flat": "0",
+          "building": "592",
+          "road": "3917",
+          "road_name": "ROAD 3917",
+          "block": "439",
+          "town": "NORTH SEHLA",
+          "po_box": "861"
+        }
+      }
+    },
+    {
+      "branch_id": "11",
+      "source_url": "https://www.sijilat.bh/public-search-cr/search-cr-3.aspx?cr_no=931&branch_no=11",
+      "outcome": "success",
+      "commercial_name": {
+        "status": "ok",
+        "value": {
+          "en": "ASIA JEWELLERY B.S.C CLOSED",
+          "ar": "مجوهرات آسيا ش.م.ب مقفلة"
+        }
+      },
+      "registration": {
+        "status": "ok",
+        "value": {
+          "cr_number": "931",
+          "branch_id": "11"
+        }
+      },
+      "registration_status": {
+        "status": "ok",
+        "value": "ACTIVE"
+      },
+      "business_activities": {
+        "status": "ok",
+        "value": [
+          {
+            "activity_code": "200681",
+            "isic4_code": "47733-1",
+            "name": "Sale/Trade of jewellery and related articles - Gold and Precious Jewellery"
+          },
+          {
+            "activity_code": "200377",
+            "isic4_code": "47612",
+            "name": "Sale/Trade of Stationary, arts and crafts, and office/professional tools and apparatus"
+          },
+          {
+            "activity_code": "200382",
+            "isic4_code": "4771",
+            "name": "Sale/Trade of clothing, footwear, apparel accessories, and leather articles"
+          },
+          {
+            "activity_code": "200381",
+            "isic4_code": "4764",
+            "name": "Sale/Trade of games and toys"
+          }
+        ]
+      },
+      "commercial_address": {
+        "status": "ok",
+        "value": {
+          "flat": "28",
+          "building": "20",
+          "road": "383",
+          "road_name": "government avenue",
+          "block": "316",
+          "town": "MANAMA CENTER",
+          "po_box": "861"
+        }
+      }
+    },
+    {
+      "branch_id": "12",
+      "source_url": "https://www.sijilat.bh/public-search-cr/search-cr-3.aspx?cr_no=931&branch_no=12",
+      "outcome": "success",
+      "commercial_name": {
+        "status": "ok",
+        "value": {
+          "en": "ASIA JEWELLERY B.S.C CLOSED",
+          "ar": "مجوهرات اسيا ش.م.ب مقفلة"
+        }
+      },
+      "registration": {
+        "status": "ok",
+        "value": {
+          "cr_number": "931",
+          "branch_id": "12"
+        }
+      },
+      "registration_status": {
+        "status": "ok",
+        "value": "ACTIVE"
+      },
+      "business_activities": {
+        "status": "ok",
+        "value": [
+          {
+            "activity_code": "200382",
+            "isic4_code": "4771",
+            "name": "Sale/Trade of clothing, footwear, apparel accessories, and leather articles"
+          },
+          {
+            "activity_code": "200681",
+            "isic4_code": "47733-1",
+            "name": "Sale/Trade of jewellery and related articles - Gold and Precious Jewellery"
+          }
+        ]
+      },
+      "commercial_address": {
+        "status": "ok",
+        "value": {
+          "flat": "307",
+          "building": "2102",
+          "road": "2825",
+          "road_name": "ROAD 2831",
+          "block": "428",
+          "town": "AL-SEEF",
+          "po_box": "861"
+        }
+      }
+    },
+    {
+      "branch_id": "13",
+      "source_url": "https://www.sijilat.bh/public-search-cr/search-cr-3.aspx?cr_no=931&branch_no=13",
+      "outcome": "success",
+      "commercial_name": {
+        "status": "ok",
+        "value": {
+          "en": "PHOENICIA DECOR B.S.C",
+          "ar": "فينيسيا ديكور ش.م.ب"
+        }
+      },
+      "registration": {
+        "status": "ok",
+        "value": {
+          "cr_number": "931",
+          "branch_id": "13"
+        }
+      },
+      "registration_status": {
+        "status": "ok",
+        "value": "ACTIVE"
+      },
+      "business_activities": {
+        "status": "ok",
+        "value": [
+          {
+            "activity_code": "200370",
+            "isic4_code": "47591",
+            "name": "Sale/Trade of Furniture and all household articles"
+          }
+        ]
+      },
+      "commercial_address": {
+        "status": "ok",
+        "value": {
+          "flat": null,
+          "building": "370",
+          "road": "2804",
+          "road_name": "ROAD 2831",
+          "block": "428",
+          "town": "AL SEEF",
+          "po_box": null
+        }
+      }
+    },
+    {
+      "branch_id": "14",
+      "source_url": "https://www.sijilat.bh/public-search-cr/search-cr-3.aspx?cr_no=931&branch_no=14",
+      "outcome": "success",
+      "commercial_name": {
+        "status": "ok",
+        "value": {
+          "en": "PHOENICIA DECOR B.S.C CLOSED",
+          "ar": "فينيسيا ديكور ش.م.ب مقفلة"
+        }
+      },
+      "registration": {
+        "status": "ok",
+        "value": {
+          "cr_number": "931",
+          "branch_id": "14"
+        }
+      },
+      "registration_status": {
+        "status": "ok",
+        "value": "ACTIVE"
+      },
+      "business_activities": {
+        "status": "ok",
+        "value": [
+          {
+            "activity_code": "200370",
+            "isic4_code": "47591",
+            "name": "Sale/Trade of Furniture and all household articles"
+          }
+        ]
+      },
+      "commercial_address": {
+        "status": "ok",
+        "value": {
+          "flat": "0",
+          "building": "370",
+          "road": "2804",
+          "road_name": "ROAD 2831",
+          "block": "428",
+          "town": "AL-SEEF",
+          "po_box": null
+        }
+      }
+    },
+    {
+      "branch_id": "15",
+      "source_url": "https://www.sijilat.bh/public-search-cr/search-cr-3.aspx?cr_no=931&branch_no=15",
+      "outcome": "success",
+      "commercial_name": {
+        "status": "ok",
+        "value": {
+          "en": "ASIA JEWELLERY B.S.C CLOSED",
+          "ar": "مجوهرات اسيا ش.م.ب مقفلة"
+        }
+      },
+      "registration": {
+        "status": "ok",
+        "value": {
+          "cr_number": "931",
+          "branch_id": "15"
+        }
+      },
+      "registration_status": {
+        "status": "ok",
+        "value": "DELETED WITH PAYMENT"
+      },
+      "business_activities": {
+        "status": "ok",
+        "value": [
+          {
+            "activity_code": "200382",
+            "isic4_code": "4771",
+            "name": "Sale/Trade of clothing, footwear, apparel accessories, and leather articles"
+          }
+        ]
+      },
+      "commercial_address": {
+        "status": "ok",
+        "value": {
+          "flat": "177",
+          "building": "ا1",
+          "road": "365",
+          "road_name": "ISA AL-KABEER AVENUE",
+          "block": "316",
+          "town": "MANAMA CENTER",
+          "po_box": "861"
+        }
+      }
+    },
+    {
+      "branch_id": "16",
+      "source_url": "https://www.sijilat.bh/public-search-cr/search-cr-3.aspx?cr_no=931&branch_no=16",
+      "outcome": "success",
+      "commercial_name": {
+        "status": "ok",
+        "value": {
+          "en": "ASIA JEWELLERS B.S.C CLOSED",
+          "ar": "شركة مجوهرات اسيا ش.م.ب مقفلة"
+        }
+      },
+      "registration": {
+        "status": "ok",
+        "value": {
+          "cr_number": "931",
+          "branch_id": "16"
+        }
+      },
+      "registration_status": {
+        "status": "ok",
+        "value": "ACTIVE"
+      },
+      "business_activities": {
+        "status": "ok",
+        "value": [
+          {
+            "activity_code": "200681",
+            "isic4_code": "47733-1",
+            "name": "Sale/Trade of jewellery and related articles - Gold and Precious Jewellery"
+          },
+          {
+            "activity_code": "200360",
+            "isic4_code": "469-1",
+            "name": "General Trade"
+          },
+          {
+            "activity_code": "200382",
+            "isic4_code": "4771",
+            "name": "Sale/Trade of clothing, footwear, apparel accessories, and leather articles"
+          }
+        ]
+      },
+      "commercial_address": {
+        "status": "ok",
+        "value": {
+          "flat": "1033",
+          "building": "2758",
+          "road": "4650",
+          "road_name": "ROAD 4650",
+          "block": "346",
+          "town": "MANAMA / SEA FRONT",
+          "po_box": "861"
+        }
+      }
+    },
+    {
+      "branch_id": "17",
+      "source_url": "https://www.sijilat.bh/public-search-cr/search-cr-3.aspx?cr_no=931&branch_no=17",
+      "outcome": "success",
+      "commercial_name": {
+        "status": "ok",
+        "value": {
+          "en": "ASIA JEWELLERS B.S.C CLOSED",
+          "ar": "مجوهرات آسيا ش.م.ب مقفلة"
+        }
+      },
+      "registration": {
+        "status": "ok",
+        "value": {
+          "cr_number": "931",
+          "branch_id": "17"
+        }
+      },
+      "registration_status": {
+        "status": "ok",
+        "value": "ACTIVE"
+      },
+      "business_activities": {
+        "status": "ok",
+        "value": [
+          {
+            "activity_code": "200382",
+            "isic4_code": "4771",
+            "name": "Sale/Trade of clothing, footwear, apparel accessories, and leather articles"
+          },
+          {
+            "activity_code": "200681",
+            "isic4_code": "47733-1",
+            "name": "Sale/Trade of jewellery and related articles - Gold and Precious Jewellery"
+          }
+        ]
+      },
+      "commercial_address": {
+        "status": "ok",
+        "value": {
+          "flat": "185",
+          "building": "1ا",
+          "road": "365",
+          "road_name": null,
+          "block": "316",
+          "town": "MANAMA CENTER",
+          "po_box": "861"
+        }
+      }
+    },
+    {
+      "branch_id": "18",
+      "source_url": "https://www.sijilat.bh/public-search-cr/search-cr-3.aspx?cr_no=931&branch_no=18",
+      "outcome": "success",
+      "commercial_name": {
+        "status": "ok",
+        "value": {
+          "en": "PHOENICIA DECOR B.S.C CLOSED",
+          "ar": "فينيسيا ديكور ش.م.ب مقفلة"
+        }
+      },
+      "registration": {
+        "status": "ok",
+        "value": {
+          "cr_number": "931",
+          "branch_id": "18"
+        }
+      },
+      "registration_status": {
+        "status": "ok",
+        "value": "ACTIVE"
+      },
+      "business_activities": {
+        "status": "ok",
+        "value": [
+          {
+            "activity_code": "200344",
+            "isic4_code": "433",
+            "name": "Building completion, finishing, and decor"
+          },
+          {
+            "activity_code": "200370",
+            "isic4_code": "47591",
+            "name": "Sale/Trade of Furniture and all household articles"
+          }
+        ]
+      },
+      "commercial_address": {
+        "status": "ok",
+        "value": {
+          "flat": "0",
+          "building": "370",
+          "road": "2804",
+          "road_name": null,
+          "block": "0428",
+          "town": "AL SEEF/السيف",
+          "po_box": "861"
+        }
+      }
+    },
+    {
+      "branch_id": "19",
+      "source_url": "https://www.sijilat.bh/public-search-cr/search-cr-3.aspx?cr_no=931&branch_no=19",
+      "outcome": "success",
+      "commercial_name": {
+        "status": "ok",
+        "value": {
+          "en": "ASIA JEWELLERS B.S.C CLOSED",
+          "ar": "مجوهرات اسيا ش.م.ب مقفلة"
+        }
+      },
+      "registration": {
+        "status": "ok",
+        "value": {
+          "cr_number": "931",
+          "branch_id": "19"
+        }
+      },
+      "registration_status": {
+        "status": "ok",
+        "value": "ACTIVE"
+      },
+      "business_activities": {
+        "status": "ok",
+        "value": [
+          {
+            "activity_code": "200382",
+            "isic4_code": "4771",
+            "name": "Sale/Trade of clothing, footwear, apparel accessories, and leather articles"
+          },
+          {
+            "activity_code": "200377",
+            "isic4_code": "47612",
+            "name": "Sale/Trade of Stationary, arts and crafts, and office/professional tools and apparatus"
+          },
+          {
+            "activity_code": "200681",
+            "isic4_code": "47733-1",
+            "name": "Sale/Trade of jewellery and related articles - Gold and Precious Jewellery"
+          },
+          {
+            "activity_code": "200386",
+            "isic4_code": "47723",
+            "name": "Sale/Tradeof perfumery, cosmetic and toiletries"
+          },
+          {
+            "activity_code": "200372",
+            "isic4_code": "47593",
+            "name": "Sale/Trade of household utensils, cutlery, glassware, and related items"
+          }
+        ]
+      },
+      "commercial_address": {
+        "status": "ok",
+        "value": {
+          "flat": "187",
+          "building": "ا1",
+          "road": "365",
+          "road_name": "ISA AL-KABEER AVENUE",
+          "block": "316",
+          "town": "MANAMA CENTER",
+          "po_box": "861"
+        }
+      }
+    },
+    {
+      "branch_id": "20",
+      "source_url": "https://www.sijilat.bh/public-search-cr/search-cr-3.aspx?cr_no=931&branch_no=20",
+      "outcome": "success",
+      "commercial_name": {
+        "status": "ok",
+        "value": {
+          "en": "BOTTEGA VENETA",
+          "ar": "بوتيجا فينيتا"
+        }
+      },
+      "registration": {
+        "status": "ok",
+        "value": {
+          "cr_number": "931",
+          "branch_id": "20"
+        }
+      },
+      "registration_status": {
+        "status": "ok",
+        "value": "ACTIVE"
+      },
+      "business_activities": {
+        "status": "ok",
+        "value": [
+          {
+            "activity_code": "200382",
+            "isic4_code": "4771",
+            "name": "Sale/Trade of clothing, footwear, apparel accessories, and leather articles"
+          }
+        ]
+      },
+      "commercial_address": {
+        "status": "ok",
+        "value": {
+          "flat": "2031",
+          "building": "166",
+          "road": "6403",
+          "road_name": null,
+          "block": "264",
+          "town": "DIYAR AL MUHARRAQ/ديار المحرق",
+          "po_box": null
+        }
+      }
+    },
+    {
+      "branch_id": "21",
+      "source_url": "https://www.sijilat.bh/public-search-cr/search-cr-3.aspx?cr_no=931&branch_no=21",
+      "outcome": "success",
+      "commercial_name": {
+        "status": "ok",
+        "value": {
+          "en": "ASIA JEWELLERS B.S.C CLOSED",
+          "ar": "مجوهرات آسيا ش.م.ب مقفلة"
+        }
+      },
+      "registration": {
+        "status": "ok",
+        "value": {
+          "cr_number": "931",
+          "branch_id": "21"
+        }
+      },
+      "registration_status": {
+        "status": "ok",
+        "value": "ACTIVE"
+      },
+      "business_activities": {
+        "status": "ok",
+        "value": [
+          {
+            "activity_code": "200215",
+            "isic4_code": "9529",
+            "name": "Repair of other personal and household goods"
+          }
+        ]
+      },
+      "commercial_address": {
+        "status": "ok",
+        "value": {
+          "flat": "0",
+          "building": "0041ا",
+          "road": "330",
+          "road_name": null,
+          "block": "305",
+          "town": "MANAMA CENTER",
+          "po_box": "861"
+        }
+      }
+    },
+    {
+      "branch_id": "22",
+      "source_url": "https://www.sijilat.bh/public-search-cr/search-cr-3.aspx?cr_no=931&branch_no=22",
+      "outcome": "success",
+      "commercial_name": {
+        "status": "ok",
+        "value": {
+          "en": "ASIA JEWELLERS B.S.C CLOSED",
+          "ar": "مجوهرات آسيا ش.م.ب مقفلة"
+        }
+      },
+      "registration": {
+        "status": "ok",
+        "value": {
+          "cr_number": "931",
+          "branch_id": "22"
+        }
+      },
+      "registration_status": {
+        "status": "ok",
+        "value": "DELETED WITH PAYMENT"
+      },
+      "business_activities": {
+        "status": "ok",
+        "value": [
+          {
+            "activity_code": "200360",
+            "isic4_code": "469-1",
+            "name": "General Trade"
+          },
+          {
+            "activity_code": "200681",
+            "isic4_code": "47733-1",
+            "name": "Sale/Trade of jewellery and related articles - Gold and Precious Jewellery"
+          }
+        ]
+      },
+      "commercial_address": {
+        "status": "ok",
+        "value": {
+          "flat": "193",
+          "building": "1ا",
+          "road": "365",
+          "road_name": null,
+          "block": "316",
+          "town": "MANAMA CENTER",
+          "po_box": "861"
+        }
+      }
+    },
+    {
+      "branch_id": "23",
+      "source_url": "https://www.sijilat.bh/public-search-cr/search-cr-3.aspx?cr_no=931&branch_no=23",
+      "outcome": "success",
+      "commercial_name": {
+        "status": "ok",
+        "value": {
+          "en": "ASIA JEWELLERS B.S.C CLOSED",
+          "ar": "مجوهرات آسيا ش.م.ب مقفلة"
+        }
+      },
+      "registration": {
+        "status": "ok",
+        "value": {
+          "cr_number": "931",
+          "branch_id": "23"
+        }
+      },
+      "registration_status": {
+        "status": "ok",
+        "value": "ACTIVE"
+      },
+      "business_activities": {
+        "status": "ok",
+        "value": [
+          {
+            "activity_code": "200481",
+            "isic4_code": "5610-1",
+            "name": "Food and beverage service activities"
+          },
+          {
+            "activity_code": "200681",
+            "isic4_code": "47733-1",
+            "name": "Sale/Trade of jewellery and related articles - Gold and Precious Jewellery"
+          },
+          {
+            "activity_code": "200360",
+            "isic4_code": "469-1",
+            "name": "General Trade"
+          }
+        ]
+      },
+      "commercial_address": {
+        "status": "ok",
+        "value": {
+          "flat": "2024",
+          "building": "166",
+          "road": "6403",
+          "road_name": null,
+          "block": "264",
+          "town": "DIYAR AL MUHARRAQ",
+          "po_box": "861"
+        }
+      }
+    },
+    {
+      "branch_id": "24",
+      "source_url": "https://www.sijilat.bh/public-search-cr/search-cr-3.aspx?cr_no=931&branch_no=24",
+      "outcome": "success",
+      "commercial_name": {
+        "status": "ok",
+        "value": {
+          "en": "ASIA JEWELLERS B.S.C CLOSED",
+          "ar": "مجوهرات آسيا ش.م.ب مقفلة"
+        }
+      },
+      "registration": {
+        "status": "ok",
+        "value": {
+          "cr_number": "931",
+          "branch_id": "24"
+        }
+      },
+      "registration_status": {
+        "status": "ok",
+        "value": "ACTIVE"
+      },
+      "business_activities": {
+        "status": "ok",
+        "value": [
+          {
+            "activity_code": "200360",
+            "isic4_code": "469-1",
+            "name": "General Trade"
+          },
+          {
+            "activity_code": "200382",
+            "isic4_code": "4771",
+            "name": "Sale/Trade of clothing, footwear, apparel accessories, and leather articles"
+          }
+        ]
+      },
+      "commercial_address": {
+        "status": "ok",
+        "value": {
+          "flat": "2031",
+          "building": "166",
+          "road": "6403",
+          "road_name": null,
+          "block": "264",
+          "town": "DIYAR AL MUHARRAQ",
+          "po_box": "861"
+        }
+      }
+    },
+    {
+      "branch_id": "25",
+      "source_url": "https://www.sijilat.bh/public-search-cr/search-cr-3.aspx?cr_no=931&branch_no=25",
+      "outcome": "success",
+      "commercial_name": {
+        "status": "ok",
+        "value": {
+          "en": "ASIA JEWELLERS B.S.C CLOSED",
+          "ar": "مجوهرات آسيا ش.م.ب مقفلة"
+        }
+      },
+      "registration": {
+        "status": "ok",
+        "value": {
+          "cr_number": "931",
+          "branch_id": "25"
+        }
+      },
+      "registration_status": {
+        "status": "ok",
+        "value": "ACTIVE"
+      },
+      "business_activities": {
+        "status": "ok",
+        "value": [
+          {
+            "activity_code": "200681",
+            "isic4_code": "47733-1",
+            "name": "Sale/Trade of jewellery and related articles - Gold and Precious Jewellery"
+          },
+          {
+            "activity_code": "200360",
+            "isic4_code": "469-1",
+            "name": "General Trade"
+          }
+        ]
+      },
+      "commercial_address": {
+        "status": "ok",
+        "value": {
+          "flat": "2021",
+          "building": "166",
+          "road": "6403",
+          "road_name": null,
+          "block": "264",
+          "town": "DIYAR AL MUHARRAQ",
+          "po_box": "861"
+        }
+      }
+    },
+    {
+      "branch_id": "26",
+      "source_url": "https://www.sijilat.bh/public-search-cr/search-cr-3.aspx?cr_no=931&branch_no=26",
+      "outcome": "success",
+      "commercial_name": {
+        "status": "ok",
+        "value": {
+          "en": "ASIA JEWELLERS B.S.C CLOSED",
+          "ar": "مجوهرات آسيا ش.م.ب مقفلة"
+        }
+      },
+      "registration": {
+        "status": "ok",
+        "value": {
+          "cr_number": "931",
+          "branch_id": "26"
+        }
+      },
+      "registration_status": {
+        "status": "ok",
+        "value": "ACTIVE"
+      },
+      "business_activities": {
+        "status": "ok",
+        "value": [
+          {
+            "activity_code": "200360",
+            "isic4_code": "469-1",
+            "name": "General Trade"
+          },
+          {
+            "activity_code": "200681",
+            "isic4_code": "47733-1",
+            "name": "Sale/Trade of jewellery and related articles - Gold and Precious Jewellery"
+          },
+          {
+            "activity_code": "200481",
+            "isic4_code": "5610-1",
+            "name": "Food and beverage service activities"
+          }
+        ]
+      },
+      "commercial_address": {
+        "status": "ok",
+        "value": {
+          "flat": "2035",
+          "building": "166",
+          "road": "6403",
+          "road_name": null,
+          "block": "264",
+          "town": "DIYAR AL MUHARRAQ",
+          "po_box": "861"
+        }
+      }
+    },
+    {
+      "branch_id": "27",
+      "source_url": "https://www.sijilat.bh/public-search-cr/search-cr-3.aspx?cr_no=931&branch_no=27",
+      "outcome": "success",
+      "commercial_name": {
+        "status": "ok",
+        "value": {
+          "en": "ASIA JEWELLERS B.S.C CLOSED",
+          "ar": "مجوهرات آسيا ش.م.ب مقفلة"
+        }
+      },
+      "registration": {
+        "status": "ok",
+        "value": {
+          "cr_number": "931",
+          "branch_id": "27"
+        }
+      },
+      "registration_status": {
+        "status": "ok",
+        "value": "ACTIVE"
+      },
+      "business_activities": {
+        "status": "ok",
+        "value": [
+          {
+            "activity_code": "200681",
+            "isic4_code": "47733-1",
+            "name": "Sale/Trade of jewellery and related articles - Gold and Precious Jewellery"
+          },
+          {
+            "activity_code": "200360",
+            "isic4_code": "469-1",
+            "name": "General Trade"
+          }
+        ]
+      },
+      "commercial_address": {
+        "status": "ok",
+        "value": {
+          "flat": "2016",
+          "building": "166",
+          "road": "6403",
+          "road_name": null,
+          "block": "264",
+          "town": "DIYAR AL MUHARRAQ",
+          "po_box": "861"
+        }
+      }
+    },
+    {
+      "branch_id": "28",
+      "source_url": "https://www.sijilat.bh/public-search-cr/search-cr-3.aspx?cr_no=931&branch_no=28",
+      "outcome": "success",
+      "commercial_name": {
+        "status": "ok",
+        "value": {
+          "en": "ASIA JEWELLERS B.S.C CLOSED",
+          "ar": "مجوهرات آسيا ش.م.ب مقفلة"
+        }
+      },
+      "registration": {
+        "status": "ok",
+        "value": {
+          "cr_number": "931",
+          "branch_id": "28"
+        }
+      },
+      "registration_status": {
+        "status": "ok",
+        "value": "ACTIVE"
+      },
+      "business_activities": {
+        "status": "ok",
+        "value": [
+          {
+            "activity_code": "200681",
+            "isic4_code": "47733-1",
+            "name": "Sale/Trade of jewellery and related articles - Gold and Precious Jewellery"
+          },
+          {
+            "activity_code": "200075",
+            "isic4_code": "701-1",
+            "name": "Activities of head offices or Management Offices"
+          }
+        ]
+      },
+      "commercial_address": {
+        "status": "ok",
+        "value": {
+          "flat": "2901",
+          "building": "1",
+          "road": "365",
+          "road_name": null,
+          "block": "316",
+          "town": "MANAMA CENTER",
+          "po_box": "861"
+        }
+      }
+    },
+    {
+      "branch_id": "29",
+      "source_url": "https://www.sijilat.bh/public-search-cr/search-cr-3.aspx?cr_no=931&branch_no=29",
+      "outcome": "success",
+      "commercial_name": {
+        "status": "ok",
+        "value": {
+          "en": "ASIA JEWELLERS B.S.C CLOSED",
+          "ar": "مجوهرات آسيا ش.م.ب مقفلة"
+        }
+      },
+      "registration": {
+        "status": "ok",
+        "value": {
+          "cr_number": "931",
+          "branch_id": "29"
+        }
+      },
+      "registration_status": {
+        "status": "ok",
+        "value": "ACTIVE"
+      },
+      "business_activities": {
+        "status": "ok",
+        "value": [
+          {
+            "activity_code": "200382",
+            "isic4_code": "4771",
+            "name": "Sale/Trade of clothing, footwear, apparel accessories, and leather articles"
+          },
+          {
+            "activity_code": "200360",
+            "isic4_code": "469-1",
+            "name": "General Trade"
+          }
+        ]
+      },
+      "commercial_address": {
+        "status": "ok",
+        "value": {
+          "flat": "332",
+          "building": "166",
+          "road": "6403",
+          "road_name": null,
+          "block": "264",
+          "town": "DIYAR AL MUHARRAQ",
+          "po_box": "861"
+        }
+      }
+    },
+    {
+      "branch_id": "30",
+      "source_url": "https://www.sijilat.bh/public-search-cr/search-cr-3.aspx?cr_no=931&branch_no=30",
+      "outcome": "success",
+      "commercial_name": {
+        "status": "ok",
+        "value": {
+          "en": "ASIA JEWELLERS B.S.C CLOSED",
+          "ar": "مجوهرات اسيا ش.م.ب مقفلة"
+        }
+      },
+      "registration": {
+        "status": "ok",
+        "value": {
+          "cr_number": "931",
+          "branch_id": "30"
+        }
+      },
+      "registration_status": {
+        "status": "ok",
+        "value": "ACTIVE"
+      },
+      "business_activities": {
+        "status": "ok",
+        "value": [
+          {
+            "activity_code": "200360",
+            "isic4_code": "469-1",
+            "name": "General Trade"
+          },
+          {
+            "activity_code": "200681",
+            "isic4_code": "47733-1",
+            "name": "Sale/Trade of jewellery and related articles - Gold and Precious Jewellery"
+          },
+          {
+            "activity_code": "200382",
+            "isic4_code": "4771",
+            "name": "Sale/Trade of clothing, footwear, apparel accessories, and leather articles"
+          }
+        ]
+      },
+      "commercial_address": {
+        "status": "ok",
+        "value": {
+          "flat": "335",
+          "building": "166",
+          "road": "6403",
+          "road_name": "ROAD 6403",
+          "block": "264",
+          "town": "DIYAR AL MUHARRAQ",
+          "po_box": null
+        }
+      }
+    },
+    {
+      "branch_id": "31",
+      "source_url": "https://www.sijilat.bh/public-search-cr/search-cr-3.aspx?cr_no=931&branch_no=31",
+      "outcome": "success",
+      "commercial_name": {
+        "status": "ok",
+        "value": {
+          "en": "ASIA JEWELLERS B.S.C CLOSED",
+          "ar": "مجوهرات اسيا ش.م.ب مقفلة"
+        }
+      },
+      "registration": {
+        "status": "ok",
+        "value": {
+          "cr_number": "931",
+          "branch_id": "31"
+        }
+      },
+      "registration_status": {
+        "status": "ok",
+        "value": "ACTIVE"
+      },
+      "business_activities": {
+        "status": "ok",
+        "value": [
+          {
+            "activity_code": "200382",
+            "isic4_code": "4771",
+            "name": "Sale/Trade of clothing, footwear, apparel accessories, and leather articles"
+          },
+          {
+            "activity_code": "200360",
+            "isic4_code": "469-1",
+            "name": "General Trade"
+          }
+        ]
+      },
+      "commercial_address": {
+        "status": "ok",
+        "value": {
+          "flat": "1100",
+          "building": "2758",
+          "road": "4650",
+          "road_name": null,
+          "block": "346",
+          "town": "MANAMA / SEA FRONT/المنامة / الواجهة البحرية",
+          "po_box": null
+        }
+      }
+    },
+    {
+      "branch_id": "32",
+      "source_url": "https://www.sijilat.bh/public-search-cr/search-cr-3.aspx?cr_no=931&branch_no=32",
+      "outcome": "success",
+      "commercial_name": {
+        "status": "ok",
+        "value": {
+          "en": "ASIA JEWELLERS B.S.C CLOSED",
+          "ar": "مجوهرات اسيا ش.م.ب مقفلة"
+        }
+      },
+      "registration": {
+        "status": "ok",
+        "value": {
+          "cr_number": "931",
+          "branch_id": "32"
+        }
+      },
+      "registration_status": {
+        "status": "ok",
+        "value": "ACTIVE"
+      },
+      "business_activities": {
+        "status": "ok",
+        "value": [
+          {
+            "activity_code": "200382",
+            "isic4_code": "4771",
+            "name": "Sale/Trade of clothing, footwear, apparel accessories, and leather articles"
+          },
+          {
+            "activity_code": "200360",
+            "isic4_code": "469-1",
+            "name": "General Trade"
+          }
+        ]
+      },
+      "commercial_address": {
+        "status": "ok",
+        "value": {
+          "flat": "204",
+          "building": "20",
+          "road": "383",
+          "road_name": "GOVERNMENT AVENUE",
+          "block": "316",
+          "town": "MANAMA CENTER",
+          "po_box": "861"
+        }
+      }
+    },
+    {
+      "branch_id": "33",
+      "source_url": "https://www.sijilat.bh/public-search-cr/search-cr-3.aspx?cr_no=931&branch_no=33",
+      "outcome": "success",
+      "commercial_name": {
+        "status": "ok",
+        "value": {
+          "en": "ASIA JEWELLERS B.S.C CLOSED",
+          "ar": "مجوهرات اسيا ش.م.ب مقفلة"
+        }
+      },
+      "registration": {
+        "status": "ok",
+        "value": {
+          "cr_number": "931",
+          "branch_id": "33"
+        }
+      },
+      "registration_status": {
+        "status": "ok",
+        "value": "DELETED WITH PAYMENT"
+      },
+      "business_activities": {
+        "status": "ok",
+        "value": [
+          {
+            "activity_code": "200382",
+            "isic4_code": "4771",
+            "name": "Sale/Trade of clothing, footwear, apparel accessories, and leather articles"
+          },
+          {
+            "activity_code": "200360",
+            "isic4_code": "469-1",
+            "name": "General Trade"
+          }
+        ]
+      },
+      "commercial_address": {
+        "status": "ok",
+        "value": {
+          "flat": "133",
+          "building": "1ا",
+          "road": "365",
+          "road_name": null,
+          "block": "316",
+          "town": "MANAMA CENTER/وسط المنامة",
+          "po_box": null
+        }
+      }
+    }
+  ]
+}

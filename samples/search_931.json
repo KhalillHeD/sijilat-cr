@@ -1,0 +1,249 @@
+{
+  "Status_Code": "200",
+  "Status_Message": "Success",
+  "jsonData": {
+    "Total_Records": "30",
+    "CR_list": [
+      {
+        "CR_NO": "931",
+        "BRANCH_NO": "1",
+        "CR_LNM": "ASIA JEWELLERS B.S.C CLOSED",
+        "CR_ANM": "مجوهرات اسيا ش.م.ب مقفلة",
+        "STATUS": "ACTIVE",
+        "ACTIVITIES": "General Trade ~Sale/Trade of jewellery and related articles - Gold and Precious Jewellery~Selling and buying shares and securities for company’s account only~Real estate activities with own or leased property~"
+      },
+      {
+        "CR_NO": "931",
+        "BRANCH_NO": "5",
+        "CR_LNM": "ASIA JEWELLERS B.S.C CLOSED",
+        "CR_ANM": "مجوهرات اسيا ش.م.ب مقفلة",
+        "STATUS": "ACTIVE",
+        "ACTIVITIES": "General Trade ~Sale/Trade of clothing, footwear, apparel accessories, and leather articles~Sale/Trade of jewellery and related articles - Gold and Precious Jewellery~Repair of other personal and household goods~"
+      },
+      {
+        "CR_NO": "931",
+        "BRANCH_NO": "6",
+        "CR_LNM": "PHOENICIA DECOR",
+        "CR_ANM": "فينيسيا ديكور",
+        "STATUS": "DELETED - MERGED WITH ANOTHER BRANCH",
+        "ACTIVITIES": null
+      },
+      {
+        "CR_NO": "931",
+        "BRANCH_NO": "7",
+        "CR_LNM": "CARTIER BOUTIQUE B.S.C CLOSED",
+        "CR_ANM": "بوتيك كارتيه ش.م.ب مقفلة",
+        "STATUS": "ACTIVE",
+        "ACTIVITIES": "Sale/Trade of Stationary, arts and crafts, and office/professional tools and apparatus~Sale/Trade of games and toys~Sale/Trade of clothing, footwear, apparel accessories, and leather articles~Sale/Trade of jewellery and related articles - Gold and Precious Jewellery~"
+      },
+      {
+        "CR_NO": "931",
+        "BRANCH_NO": "8",
+        "CR_LNM": "ASIA JEWELLERY B.S.C CLOSED",
+        "CR_ANM": "مجوهرات اسيا ش.م.ب مقفلة",
+        "STATUS": "ACTIVE",
+        "ACTIVITIES": "Sale/Trade of Stationary, arts and crafts, and office/professional tools and apparatus~Sale/Trade of games and toys~Sale/Trade of clothing, footwear, apparel accessories, and leather articles~Sale/Trade of jewellery and related articles - Gold and Precious Jewellery~"
+      },
+      {
+        "CR_NO": "931",
+        "BRANCH_NO": "9",
+        "CR_LNM": "ASIA JEWELLERY B.S.C CLOSED",
+        "CR_ANM": "مجوهرات اسيا ش.م.ب مقفلة",
+        "STATUS": "ACTIVE",
+        "ACTIVITIES": "Sale/Trade of Stationary, arts and crafts, and office/professional tools and apparatus~Sale/Trade of clothing, footwear, apparel accessories, and leather articles~Sale/Trade of jewellery and related articles - Gold and Precious Jewellery~"
+      },
+      {
+        "CR_NO": "931",
+        "BRANCH_NO": "10",
+        "CR_LNM": "MAHMOOD EBRAHIM JAFFAR B.S.C CLOSED",
+        "CR_ANM": "محمود ابراهيم جعفر ش.م.ب مقفلة",
+        "STATUS": "DELETED WITH PAYMENT",
+        "ACTIVITIES": "Carpentry Workshop~"
+      },
+      {
+        "CR_NO": "931",
+        "BRANCH_NO": "11",
+        "CR_LNM": "ASIA JEWELLERY B.S.C CLOSED",
+        "CR_ANM": "مجوهرات آسيا ش.م.ب مقفلة",
+        "STATUS": "ACTIVE",
+        "ACTIVITIES": "Sale/Trade of Stationary, arts and crafts, and office/professional tools and apparatus~Sale/Trade of games and toys~Sale/Trade of clothing, footwear, apparel accessories, and leather articles~Sale/Trade of jewellery and related articles - Gold and Precious Jewellery~"
+      },
+      {
+        "CR_NO": "931",
+        "BRANCH_NO": "12",
+        "CR_LNM": "ASIA JEWELLERY B.S.C CLOSED",
+        "CR_ANM": "مجوهرات اسيا ش.م.ب مقفلة",
+        "STATUS": "ACTIVE",
+        "ACTIVITIES": "Sale/Trade of clothing, footwear, apparel accessories, and leather articles~Sale/Trade of jewellery and related articles - Gold and Precious Jewellery~"
+      },
+      {
+        "CR_NO": "931",
+        "BRANCH_NO": "13",
+        "CR_LNM": "PHOENICIA DECOR B.S.C",
+        "CR_ANM": "فينيسيا ديكور ش.م.ب",
+        "STATUS": "ACTIVE",
+        "ACTIVITIES": "Sale/Trade of Furniture and all household articles~"
+      },
+      {
+        "CR_NO": "931",
+        "BRANCH_NO": "14",
+        "CR_LNM": "PHOENICIA DECOR B.S.C CLOSED",
+        "CR_ANM": "فينيسيا ديكور ش.م.ب مقفلة",
+        "STATUS": "ACTIVE",
+        "ACTIVITIES": "Sale/Trade of Furniture and all household articles~"
+      },
+      {
+        "CR_NO": "931",
+        "BRANCH_NO": "15",
+        "CR_LNM": "ASIA JEWELLERY B.S.C CLOSED",
+        "CR_ANM": "مجوهرات اسيا ش.م.ب مقفلة",
+        "STATUS": "DELETED WITH PAYMENT",
+        "ACTIVITIES": "Sale/Trade of clothing, footwear, apparel accessories, and leather articles~"
+      },
+      {
+        "CR_NO": "931",
+        "BRANCH_NO": "16",
+        "CR_LNM": "ASIA JEWELLERS B.S.C CLOSED",
+        "CR_ANM": "شركة مجوهرات اسيا ش.م.ب مقفلة",
+        "STATUS": "ACTIVE",
+        "ACTIVITIES": "General Trade ~Sale/Trade of clothing, footwear, apparel accessories, and leather articles~Sale/Trade of jewellery and related articles - Gold and Precious Jewellery~"
+      },
+      {
+        "CR_NO": "931",
+        "BRANCH_NO": "17",
+        "CR_LNM": "ASIA JEWELLERS B.S.C CLOSED",
+        "CR_ANM": "مجوهرات آسيا ش.م.ب مقفلة",
+        "STATUS": "ACTIVE",
+        "ACTIVITIES": "Sale/Trade of clothing, footwear, apparel accessories, and leather articles~Sale/Trade of jewellery and related articles - Gold and Precious Jewellery~"
+      },
+      {
+        "CR_NO": "931",
+        "BRANCH_NO": "18",
+        "CR_LNM": "PHOENICIA DECOR B.S.C CLOSED",
+        "CR_ANM": "فينيسيا ديكور ش.م.ب مقفلة",
+        "STATUS": "ACTIVE",
+        "ACTIVITIES": "Building completion, finishing, and decor~Sale/Trade of Furniture and all household articles~"
+      },
+      {
+        "CR_NO": "931",
+        "BRANCH_NO": "19",
+        "CR_LNM": "ASIA JEWELLERS B.S.C CLOSED",
+        "CR_ANM": "مجوهرات اسيا ش.م.ب مقفلة",
+        "STATUS": "ACTIVE",
+        "ACTIVITIES": "Sale/Trade of household utensils, cutlery, glassware, and related items~Sale/Trade of Stationary, arts and crafts, and office/professional tools and apparatus~Sale/Trade of clothing, footwear, apparel accessories, and leather articles~Sale/Tradeof perfumery, cosmetic and toiletries~Sale/Trade of jewellery and related articles - Gold and Precious Jewellery~"
+      },
+      {
+        "CR_NO": "931",
+        "BRANCH_NO": "20",
+        "CR_LNM": "BOTTEGA VENETA",
+        "CR_ANM": "بوتيجا فينيتا",
+        "STATUS": "ACTIVE",
+        "ACTIVITIES": "Sale/Trade of clothing, footwear, apparel accessories, and leather articles~"
+      },
+      {
+        "CR_NO": "931",
+        "BRANCH_NO": "21",
+        "CR_LNM": "ASIA JEWELLERS B.S.C CLOSED",
+        "CR_ANM": "مجوهرات آسيا ش.م.ب مقفلة",
+        "STATUS": "ACTIVE",
+        "ACTIVITIES": "Repair of other personal and household goods~"
+      },
+      {
+        "CR_NO": "931",
+        "BRANCH_NO": "22",
+        "CR_LNM": "ASIA JEWELLERS B.S.C CLOSED",
+        "CR_ANM": "مجوهرات آسيا ش.م.ب مقفلة",
+        "STATUS": "DELETED WITH PAYMENT",
+        "ACTIVITIES": "General Trade ~Sale/Trade of jewellery and related articles - Gold and Precious Jewellery~"
+      },
+      {
+        "CR_NO": "931",
+        "BRANCH_NO": "23",
+        "CR_LNM": "ASIA JEWELLERS B.S.C CLOSED",
+        "CR_ANM": "مجوهرات آسيا ش.م.ب مقفلة",
+        "STATUS": "ACTIVE",
+        "ACTIVITIES": "General Trade ~Sale/Trade of jewellery and related articles - Gold and Precious Jewellery~Food and beverage service activities~"
+      },
+      {
+        "CR_NO": "931",
+        "BRANCH_NO": "24",
+        "CR_LNM": "ASIA JEWELLERS B.S.C CLOSED",
+        "CR_ANM": "مجوهرات آسيا ش.م.ب مقفلة",
+        "STATUS": "ACTIVE",
+        "ACTIVITIES": "General Trade ~Sale/Trade of clothing, footwear, apparel accessories, and leather articles~"
+      },
+      {
+        "CR_NO": "931",
+        "BRANCH_NO": "25",
+        "CR_LNM": "ASIA JEWELLERS B.S.C CLOSED",
+        "CR_ANM": "مجوهرات آسيا ش.م.ب مقفلة",
+        "STATUS": "ACTIVE",
+        "ACTIVITIES": "General Trade ~Sale/Trade of jewellery and related articles - Gold and Precious Jewellery~"
+      },
+      {
+        "CR_NO": "931",
+        "BRANCH_NO": "26",
+        "CR_LNM": "ASIA JEWELLERS B.S.C CLOSED",
+        "CR_ANM": "مجوهرات آسيا ش.م.ب مقفلة",
+        "STATUS": "ACTIVE",
+        "ACTIVITIES": "General Trade ~Sale/Trade of jewellery and related articles - Gold and Precious Jewellery~Food and beverage service activities~"
+      },
+      {
+        "CR_NO": "931",
+        "BRANCH_NO": "27",
+        "CR_LNM": "ASIA JEWELLERS B.S.C CLOSED",
+        "CR_ANM": "مجوهرات آسيا ش.م.ب مقفلة",
+        "STATUS": "ACTIVE",
+        "ACTIVITIES": "General Trade ~Sale/Trade of jewellery and related articles - Gold and Precious Jewellery~"
+      },
+      {
+        "CR_NO": "931",
+        "BRANCH_NO": "28",
+        "CR_LNM": "ASIA JEWELLERS B.S.C CLOSED",
+        "CR_ANM": "مجوهرات آسيا ش.م.ب مقفلة",
+        "STATUS": "ACTIVE",
+        "ACTIVITIES": "Sale/Trade of jewellery and related articles - Gold and Precious Jewellery~Activities of head offices or Management Offices~"
+      },
+      {
+        "CR_NO": "931",
+        "BRANCH_NO": "29",
+        "CR_LNM": "ASIA JEWELLERS B.S.C CLOSED",
+        "CR_ANM": "مجوهرات آسيا ش.م.ب مقفلة",
+        "STATUS": "ACTIVE",
+        "ACTIVITIES": "General Trade ~Sale/Trade of clothing, footwear, apparel accessories, and leather articles~"
+      },
+      {
+        "CR_NO": "931",
+        "BRANCH_NO": "30",
+        "CR_LNM": "ASIA JEWELLERS B.S.C CLOSED",
+        "CR_ANM": "مجوهرات اسيا ش.م.ب مقفلة",
+        "STATUS": "ACTIVE",
+        "ACTIVITIES": "General Trade ~Sale/Trade of clothing, footwear, apparel accessories, and leather articles~Sale/Trade of jewellery and related articles - Gold and Precious Jewellery~"
+      },
+      {
+        "CR_NO": "931",
+        "BRANCH_NO": "31",
+        "CR_LNM": "ASIA JEWELLERS B.S.C CLOSED",
+        "CR_ANM": "مجوهرات اسيا ش.م.ب مقفلة",
+        "STATUS": "ACTIVE",
+        "ACTIVITIES": "General Trade ~Sale/Trade of clothing, footwear, apparel accessories, and leather articles~"
+      },
+      {
+        "CR_NO": "931",
+        "BRANCH_NO": "32",
+        "CR_LNM": "ASIA JEWELLERS B.S.C CLOSED",
+        "CR_ANM": "مجوهرات اسيا ش.م.ب مقفلة",
+        "STATUS": "ACTIVE",
+        "ACTIVITIES": "General Trade ~Sale/Trade of clothing, footwear, apparel accessories, and leather articles~"
+      },
+      {
+        "CR_NO": "931",
+        "BRANCH_NO": "33",
+        "CR_LNM": "ASIA JEWELLERS B.S.C CLOSED",
+        "CR_ANM": "مجوهرات اسيا ش.م.ب مقفلة",
+        "STATUS": "DELETED WITH PAYMENT",
+        "ACTIVITIES": "General Trade ~Sale/Trade of clothing, footwear, apparel accessories, and leather articles~"
+      }
+    ]
+  }
+}

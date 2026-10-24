@@ -1,0 +1,29 @@
+{
+  "Status_Code": "200",
+  "Status_Message": "Success",
+  "jsonData": {
+    "company_summary": {
+      "CR_NO": "931",
+      "BRANCH_NO": "13",
+      "CR_LNM": "PHOENICIA DECOR B.S.C",
+      "CR_ANM": "فينيسيا ديكور ش.م.ب",
+      "STATUS": "ACTIVE"
+    },
+    "commercialAddress": {
+      "CR_FLAT": "",
+      "CR_BULD": "370",
+      "CR_ROAD": "2804",
+      "CR_ROAD_NM": "ROAD 2831",
+      "CR_BLOCK": "428",
+      "CR_TOWN_NM": "AL SEEF",
+      "CR_PBOX": ""
+    },
+    "businessActivities": [
+      {
+        "ACT_CD": "200370",
+        "ISIC4_CD": "47591",
+        "ISIC4_NM": "Sale/Trade of Furniture and all household articles"
+      }
+    ]
+  }
+}

@@ -28,14 +28,14 @@ def page_url(cr_no: str, branch_no: str) -> str:
     return config.DETAILS_PAGE + "?" + urlencode({"cr_no": cr_no, "branch_no": branch_no})
 
 
-def build_search_body(cr_no: str, lang: str = "EN") -> dict:
+def build_search_body(cr_no: str, lang: str = "EN", page: int = 1, per_page: int = 10) -> dict:
     body = {
-        "draw": 1,
+        "draw": page,
         "columns": [{"data": c, "name": "", "searchable": True, "orderable": False,
                      "search": {"value": "", "regex": False}} for c in _SEARCH_COLUMNS],
         "order": [],
-        "start": 0,
-        "length": 10,
+        "start": (page - 1) * per_page,
+        "length": per_page,
         "search": {"value": "", "regex": False},
     }
     body.update({k: "" for k in _EMPTY_SEARCH_FILTERS})
@@ -43,7 +43,7 @@ def build_search_body(cr_no: str, lang: str = "EN") -> dict:
         "CR_NO": cr_no,
         "CurrentMenuType": "A",
         "CULT_LANG": lang,
-        "PaginationParams": {"Page": 1, "ItemPerPage": 10},
+        "PaginationParams": {"Page": page, "ItemPerPage": per_page},
     })
     return body
 

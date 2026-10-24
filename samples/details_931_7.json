@@ -1,0 +1,44 @@
+{
+  "Status_Code": "200",
+  "Status_Message": "Success",
+  "jsonData": {
+    "company_summary": {
+      "CR_NO": "931",
+      "BRANCH_NO": "7",
+      "CR_LNM": "CARTIER BOUTIQUE B.S.C CLOSED",
+      "CR_ANM": "بوتيك كارتيه ش.م.ب مقفلة",
+      "STATUS": "ACTIVE"
+    },
+    "commercialAddress": {
+      "CR_FLAT": "2016",
+      "CR_BULD": "166",
+      "CR_ROAD": "6403",
+      "CR_ROAD_NM": "",
+      "CR_BLOCK": "264",
+      "CR_TOWN_NM": "DIYAR AL MUHARRAQ/ديار المحرق",
+      "CR_PBOX": ""
+    },
+    "businessActivities": [
+      {
+        "ACT_CD": "200681",
+        "ISIC4_CD": "47733-1",
+        "ISIC4_NM": "Sale/Trade of jewellery and related articles - Gold and Precious Jewellery"
+      },
+      {
+        "ACT_CD": "200381",
+        "ISIC4_CD": "4764",
+        "ISIC4_NM": "Sale/Trade of games and toys"
+      },
+      {
+        "ACT_CD": "200377",
+        "ISIC4_CD": "47612",
+        "ISIC4_NM": "Sale/Trade of Stationary, arts and crafts, and office/professional tools and apparatus"
+      },
+      {
+        "ACT_CD": "200382",
+        "ISIC4_CD": "4771",
+        "ISIC4_NM": "Sale/Trade of clothing, footwear, apparel accessories, and leather articles"
+      }
+    ]
+  }
+}

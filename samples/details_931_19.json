@@ -1,0 +1,49 @@
+{
+  "Status_Code": "200",
+  "Status_Message": "Success",
+  "jsonData": {
+    "company_summary": {
+      "CR_NO": "931",
+      "BRANCH_NO": "19",
+      "CR_LNM": "ASIA JEWELLERS B.S.C CLOSED",
+      "CR_ANM": "مجوهرات اسيا ش.م.ب مقفلة",
+      "STATUS": "ACTIVE"
+    },
+    "commercialAddress": {
+      "CR_FLAT": "187",
+      "CR_BULD": "ا1",
+      "CR_ROAD": "365",
+      "CR_ROAD_NM": "ISA AL-KABEER AVENUE",
+      "CR_BLOCK": "316",
+      "CR_TOWN_NM": "MANAMA CENTER",
+      "CR_PBOX": "861"
+    },
+    "businessActivities": [
+      {
+        "ACT_CD": "200382",
+        "ISIC4_CD": "4771",
+        "ISIC4_NM": "Sale/Trade of clothing, footwear, apparel accessories, and leather articles"
+      },
+      {
+        "ACT_CD": "200377",
+        "ISIC4_CD": "47612",
+        "ISIC4_NM": "Sale/Trade of Stationary, arts and crafts, and office/professional tools and apparatus"
+      },
+      {
+        "ACT_CD": "200681",
+        "ISIC4_CD": "47733-1",
+        "ISIC4_NM": "Sale/Trade of jewellery and related articles - Gold and Precious Jewellery"
+      },
+      {
+        "ACT_CD": "200386",
+        "ISIC4_CD": "47723",
+        "ISIC4_NM": "Sale/Tradeof perfumery, cosmetic and toiletries"
+      },
+      {
+        "ACT_CD": "200372",
+        "ISIC4_CD": "47593",
+        "ISIC4_NM": "Sale/Trade of household utensils, cutlery, glassware, and related items"
+      }
+    ]
+  }
+}

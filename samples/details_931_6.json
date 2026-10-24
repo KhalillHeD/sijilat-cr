@@ -1,0 +1,23 @@
+{
+  "Status_Code": "200",
+  "Status_Message": "Success",
+  "jsonData": {
+    "company_summary": {
+      "CR_NO": "931",
+      "BRANCH_NO": "6",
+      "CR_LNM": "PHOENICIA DECOR",
+      "CR_ANM": "فينيسيا ديكور",
+      "STATUS": "DELETED - MERGED WITH ANOTHER BRANCH"
+    },
+    "commercialAddress": {
+      "CR_FLAT": "0",
+      "CR_BULD": "678",
+      "CR_ROAD": "3918",
+      "CR_ROAD_NM": "ROAD 3918",
+      "CR_BLOCK": "439",
+      "CR_TOWN_NM": "NORTH SEHLA",
+      "CR_PBOX": "861"
+    },
+    "businessActivities": null
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "cr_number": "99999999",
+  "source": "https://www.sijilat.bh",
+  "collected_at": "2026-10-24T18:02:49Z",
+  "mode": "live",
+  "outcome": "not_found",
+  "notes": [
+    {
+      "step": "search",
+      "kind": "not_found",
+      "detail": "no matching CR/branch in the source (not a retrieval failure)"
+    }
+  ],
+  "branches": []
+}

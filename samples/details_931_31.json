@@ -1,0 +1,34 @@
+{
+  "Status_Code": "200",
+  "Status_Message": "Success",
+  "jsonData": {
+    "company_summary": {
+      "CR_NO": "931",
+      "BRANCH_NO": "31",
+      "CR_LNM": "ASIA JEWELLERS B.S.C CLOSED",
+      "CR_ANM": "مجوهرات اسيا ش.م.ب مقفلة",
+      "STATUS": "ACTIVE"
+    },
+    "commercialAddress": {
+      "CR_FLAT": "1100",
+      "CR_BULD": "2758",
+      "CR_ROAD": "4650",
+      "CR_ROAD_NM": "",
+      "CR_BLOCK": "346",
+      "CR_TOWN_NM": "MANAMA / SEA FRONT/المنامة / الواجهة البحرية",
+      "CR_PBOX": ""
+    },
+    "businessActivities": [
+      {
+        "ACT_CD": "200382",
+        "ISIC4_CD": "4771",
+        "ISIC4_NM": "Sale/Trade of clothing, footwear, apparel accessories, and leather articles"
+      },
+      {
+        "ACT_CD": "200360",
+        "ISIC4_CD": "469-1",
+        "ISIC4_NM": "General Trade "
+      }
+    ]
+  }
+}

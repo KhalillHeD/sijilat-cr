@@ -1,0 +1,34 @@
+{
+  "Status_Code": "200",
+  "Status_Message": "Success",
+  "jsonData": {
+    "company_summary": {
+      "CR_NO": "931",
+      "BRANCH_NO": "12",
+      "CR_LNM": "ASIA JEWELLERY B.S.C CLOSED",
+      "CR_ANM": "مجوهرات اسيا ش.م.ب مقفلة",
+      "STATUS": "ACTIVE"
+    },
+    "commercialAddress": {
+      "CR_FLAT": "307",
+      "CR_BULD": "2102",
+      "CR_ROAD": "2825",
+      "CR_ROAD_NM": "ROAD 2831",
+      "CR_BLOCK": "428",
+      "CR_TOWN_NM": "AL-SEEF",
+      "CR_PBOX": "861"
+    },
+    "businessActivities": [
+      {
+        "ACT_CD": "200382",
+        "ISIC4_CD": "4771",
+        "ISIC4_NM": "Sale/Trade of clothing, footwear, apparel accessories, and leather articles"
+      },
+      {
+        "ACT_CD": "200681",
+        "ISIC4_CD": "47733-1",
+        "ISIC4_NM": "Sale/Trade of jewellery and related articles - Gold and Precious Jewellery"
+      }
+    ]
+  }
+}

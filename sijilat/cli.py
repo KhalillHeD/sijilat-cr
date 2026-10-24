@@ -9,6 +9,7 @@ from pathlib import Path
 
 from .config import MissingSecret
 from .fetchers import FailingFetcher, FileFetcher, RecordingFetcher
+from .parser import FIELD_NAMES
 from .pipeline import run
 
 # exit codes
@@ -53,12 +54,12 @@ def main(argv=None) -> int:
     out_path.parent.mkdir(parents=True, exist_ok=True)
     out_path.write_text(json.dumps(result, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
 
-    status = result["outcome"]["status"]
+    status = result["outcome"]
     print(f"outcome: {status}  ->  {out_path}")
     for b in result["branches"]:
-        marks = ", ".join(f"{k}={v['status']}" for k, v in b["fields"].items())
+        marks = ", ".join(f"{k}={b[k]['status']}" for k in FIELD_NAMES)
         print(f"  branch {b['branch_id']}: {b['outcome']}  [{marks}]")
-    for e in result["outcome"]["errors"]:
+    for e in result["notes"]:
         print(f"  note: {e.get('step')}: {e.get('kind')}: {e.get('detail')}")
     return EXIT[status]
 

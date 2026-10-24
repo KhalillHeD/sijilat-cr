@@ -1,0 +1,29 @@
+{
+  "Status_Code": "200",
+  "Status_Message": "Success",
+  "jsonData": {
+    "company_summary": {
+      "CR_NO": "931",
+      "BRANCH_NO": "10",
+      "CR_LNM": "MAHMOOD EBRAHIM JAFFAR B.S.C CLOSED",
+      "CR_ANM": "محمود ابراهيم جعفر ش.م.ب مقفلة",
+      "STATUS": "DELETED WITH PAYMENT"
+    },
+    "commercialAddress": {
+      "CR_FLAT": "0",
+      "CR_BULD": "592",
+      "CR_ROAD": "3917",
+      "CR_ROAD_NM": "ROAD 3917",
+      "CR_BLOCK": "439",
+      "CR_TOWN_NM": "NORTH SEHLA",
+      "CR_PBOX": "861"
+    },
+    "businessActivities": [
+      {
+        "ACT_CD": "200315",
+        "ISIC4_CD": "16225",
+        "ISIC4_NM": "Carpentry Workshop"
+      }
+    ]
+  }
+}

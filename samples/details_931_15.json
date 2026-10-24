@@ -1,0 +1,29 @@
+{
+  "Status_Code": "200",
+  "Status_Message": "Success",
+  "jsonData": {
+    "company_summary": {
+      "CR_NO": "931",
+      "BRANCH_NO": "15",
+      "CR_LNM": "ASIA JEWELLERY B.S.C CLOSED",
+      "CR_ANM": "مجوهرات اسيا ش.م.ب مقفلة",
+      "STATUS": "DELETED WITH PAYMENT"
+    },
+    "commercialAddress": {
+      "CR_FLAT": "177",
+      "CR_BULD": "ا1",
+      "CR_ROAD": "365",
+      "CR_ROAD_NM": "ISA AL-KABEER AVENUE",
+      "CR_BLOCK": "316",
+      "CR_TOWN_NM": "MANAMA CENTER",
+      "CR_PBOX": "861"
+    },
+    "businessActivities": [
+      {
+        "ACT_CD": "200382",
+        "ISIC4_CD": "4771",
+        "ISIC4_NM": "Sale/Trade of clothing, footwear, apparel accessories, and leather articles"
+      }
+    ]
+  }
+}

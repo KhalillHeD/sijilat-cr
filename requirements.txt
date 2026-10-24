@@ -2,4 +2,3 @@ requests>=2.31
 pycryptodome>=3.19
 # tests only
 pytest>=8.0
-responses>=0.25

@@ -33,6 +33,7 @@ how each output field maps to the source, and the exact rules behind every statu
 | `crypto.py` | CryptoJS / OpenSSL "Salted__" AES-256-CBC | no |
 | `fetchers.py` | `FileFetcher` (replay), `RecordingFetcher` (save minimised raw), `FailingFetcher` (simulate) | no |
 | `compare.py` | Field-by-field diff of two outputs (repeat-run check) | no |
+| `benchmark.py` | Live time, request and field-status measurement over a list of CRs | **yes** |
 | `models.py` | Status constants, `FieldResult`, `FetchError`, `ExtractionError` | no |
 | `config.py` | URLs, politeness settings, secrets from env / `.env` | no |
 

@@ -1,0 +1,143 @@
+{
+  "summary": {
+    "started_at": "2026-10-24T18:50:12Z",
+    "mode": "live",
+    "crs_requested": 12,
+    "outcomes": {
+      "success": 10,
+      "not_found": 2
+    },
+    "branches_collected": 78,
+    "fields_collected": 390,
+    "field_status_share": {
+      "ok": 0.959,
+      "absent_in_source": 0.041
+    },
+    "seconds_total_collected": 119.2,
+    "seconds_per_branch": 1.53,
+    "requests_total": 97
+  },
+  "per_cr": [
+    {
+      "cr_number": "1",
+      "outcome": "success",
+      "branches": 2,
+      "field_status": {
+        "ok": 9,
+        "absent_in_source": 1
+      },
+      "seconds": 10.5,
+      "requests": 5
+    },
+    {
+      "cr_number": "7",
+      "outcome": "not_found",
+      "branches": 0,
+      "field_status": {},
+      "seconds": 0.2,
+      "requests": 1
+    },
+    {
+      "cr_number": "52",
+      "outcome": "success",
+      "branches": 28,
+      "field_status": {
+        "ok": 138,
+        "absent_in_source": 2
+      },
+      "seconds": 32.0,
+      "requests": 31
+    },
+    {
+      "cr_number": "931",
+      "outcome": "success",
+      "branches": 30,
+      "field_status": {
+        "ok": 149,
+        "absent_in_source": 1
+      },
+      "seconds": 34.2,
+      "requests": 33
+    },
+    {
+      "cr_number": "2500",
+      "outcome": "success",
+      "branches": 1,
+      "field_status": {
+        "ok": 5
+      },
+      "seconds": 1.5,
+      "requests": 2
+    },
+    {
+      "cr_number": "15000",
+      "outcome": "success",
+      "branches": 11,
+      "field_status": {
+        "ok": 44,
+        "absent_in_source": 11
+      },
+      "seconds": 29.7,
+      "requests": 13
+    },
+    {
+      "cr_number": "40000",
+      "outcome": "success",
+      "branches": 1,
+      "field_status": {
+        "ok": 5
+      },
+      "seconds": 1.6,
+      "requests": 2
+    },
+    {
+      "cr_number": "75000",
+      "outcome": "success",
+      "branches": 1,
+      "field_status": {
+        "ok": 5
+      },
+      "seconds": 2.2,
+      "requests": 2
+    },
+    {
+      "cr_number": "110000",
+      "outcome": "success",
+      "branches": 1,
+      "field_status": {
+        "ok": 5
+      },
+      "seconds": 1.8,
+      "requests": 2
+    },
+    {
+      "cr_number": "140000",
+      "outcome": "success",
+      "branches": 2,
+      "field_status": {
+        "ok": 10
+      },
+      "seconds": 3.0,
+      "requests": 3
+    },
+    {
+      "cr_number": "160000",
+      "outcome": "success",
+      "branches": 1,
+      "field_status": {
+        "ok": 4,
+        "absent_in_source": 1
+      },
+      "seconds": 2.3,
+      "requests": 2
+    },
+    {
+      "cr_number": "999999",
+      "outcome": "not_found",
+      "branches": 0,
+      "field_status": {},
+      "seconds": 0.2,
+      "requests": 1
+    }
+  ]
+}

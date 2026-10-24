@@ -36,6 +36,7 @@ committed or submitted.
 | `python -m sijilat.cli --cr 931 --from-dir samples` | **Offline** replay from saved responses (no keys needed) |
 | `python -m sijilat.cli --cr 931 --from-dir samples --simulate-failure details --simulate-branch 5` | **Simulated** failure of one branch |
 | `python -m sijilat.compare output/run1.json output/run2.json` | Field-by-field comparison of two runs |
+| `python -m sijilat.benchmark --crs 1 931 15000` | Live measurement over several CRs → `output/benchmark.json` |
 | `python -m pytest -q` | Tests (offline, use `samples/`) |
 
 Exit codes: `0` success · `1` failed · `2` partial · `3` not found · `4` configuration error.
@@ -166,7 +167,7 @@ activities come from the search row (`origin: "search"`). The other 29 branches 
 **What it could replace:** the manual lookup an analyst does for KYC, onboarding or due
 diligence: searching the CR, opening each branch page, and copying name, status,
 activities and address into a file. For a multi-branch CR like 931 that is 30 pages by hand;
-the prototype does it in about 40 seconds with a source link per branch.
+the prototype did it in 34 seconds (measured, see below) with a source link per branch.
 
 **What still needs human review:**
 - Interpreting status (e.g. "DELETED WITH PAYMENT" vs "MERGED") and its consequence for a decision.
@@ -180,6 +181,39 @@ the prototype does it in about 40 seconds with a source link per branch.
 - *Coverage:* share of fields `ok` vs `not_retrieved` / `extraction_failed` over many runs (the
   latter two are our failures and should trend to 0).
 - *Robustness:* how often the run breaks over weeks (source changes), and time to fix.
+
+**Measured (live, 2026-10-24).** `python -m sijilat.benchmark --crs 1 7 52 931 2500 15000 40000 75000 110000 140000 160000 999999 --max-branches 30`
+(12 CR numbers spread across the range, chosen by me, not random; full results in `output/benchmark.json`):
+
+| Metric | Result |
+|---|---|
+| CRs found / not found | 10 / 2 (7 and 999999; both correctly `not_found`) |
+| Branches collected | 78 (1 to 30 per CR) |
+| Fields collected | 390 |
+| `ok` | 95.9 % (374) |
+| `absent_in_source` | 4.1 % (16) |
+| `not_retrieved` + `extraction_failed` (our failures) | **0 %** |
+| Machine time | 119 s in total, **1.5 s per branch**, 97 HTTP requests (about 1 per branch plus setup) |
+
+The absent values are not random gaps. In the 14 of 16 I inspected, each one belonged to an
+**inactive** branch: "SOLD OR LEGAL STATUS CHANGED", "DELETED WITH PAYMENT" or "Deactivated
+for Not Renewing the CR". For those branches the source drops the activities, or (once) the
+whole address.
+
+**Manual baseline.** TODO (you): look up 5 branches by hand, with a stopwatch: search, open the
+page, copy the five fields into a sheet. Then check the prototype's output for the same 5.
+
+| | Manual | Prototype + review |
+|---|---|---|
+| Minutes per branch | TODO | 1.5 s collection + TODO review |
+| Field errors (out of 25) | TODO | TODO |
+
+Estimate: *time saved per CR ≈ branches × (manual minutes per branch − review minutes per branch)*.
+Example only, using a placeholder until it is measured: at 2 min by hand and 0.25 min of review per
+branch, CR 931 would take 60 min by hand and about 8 min with the prototype.
+
+What this sample does **not** show: accuracy, which needs the manual check above; behaviour on a
+random or much larger sample; and stability over time.
 
 ## 6. Tools, and whether AI adds value
 

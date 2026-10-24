@@ -28,11 +28,15 @@ from .payloads import build_details_body, build_search_body, page_url
 log = logging.getLogger(__name__)
 
 # The page contains:  var SessionID = '0x....' !== 'null' ? '0x....' : null;
+
+
 _SESSION_RE = re.compile(r"var\s+SessionID\s*=\s*'([^']*)'")
 
 
 def extract_session_id(html: str) -> str | None:
+
     """Return the SessionID literal from the page HTML, or None if absent/'null'."""
+
     match = _SESSION_RE.search(html or "")
     if not match:
         return None
@@ -41,6 +45,11 @@ def extract_session_id(html: str) -> str | None:
 
 
 class SijilatClient:
+    """Live fetcher. Same interface as FileFetcher: search(), details(), source_url().
+
+    One instance keeps the cookies, the SessionID and the token for a whole run, so
+    they are fetched once and reused for every branch.
+    """
     mode = "live"
 
     def __init__(self, session: requests.Session | None = None, clock=time.monotonic,
@@ -56,6 +65,7 @@ class SijilatClient:
 
     # ---- low level ---------------------------------------------------------------
     def _pace(self) -> None:
+        """Sleep so that consecutive requests are at least MIN_INTERVAL_SECONDS apart."""
         if self._last_call is not None:
             wait = config.MIN_INTERVAL_SECONDS - (self._clock() - self._last_call)
             if wait > 0:
@@ -83,12 +93,14 @@ class SijilatClient:
 
     @staticmethod
     def _raise_for_http(resp: requests.Response, what: str) -> None:
+        """Turn HTTP 4xx/5xx into a FetchError (kind 'auth' for 401/403, else 'http')."""
         if resp.status_code >= 400:
             kind = "auth" if resp.status_code in (401, 403) else "http"
             raise FetchError(kind, f"{what}: HTTP {resp.status_code}", http_status=resp.status_code)
 
     # ---- step 0: session id ------------------------------------------------------
     def _ensure_session_id(self, cr_no: str, branch_no: str) -> str:
+        """Load the public details page once and read the SessionID the details API expects."""
         if self._session_id:
             return self._session_id
         resp = self._send("GET", page_url(cr_no, branch_no))
@@ -101,6 +113,8 @@ class SijilatClient:
 
     # ---- step 1: token -----------------------------------------------------------
     def _ensure_token(self, force: bool = False) -> None:
+        """Get (or reuse) the anonymous bearer token. The password is the same HMAC-SHA256
+        the site's own script computes; refreshed 60 s before expiry or when forced."""
         if (not force and self._token
                 and self._clock() < self._token_expiry - config.TOKEN_REFRESH_MARGIN_SECONDS):
             return
@@ -124,6 +138,11 @@ class SijilatClient:
 
     # ---- steps 2 and 3: API calls ------------------------------------------------
     def _post_api(self, url: str, body: dict, encrypted: bool, what: str) -> dict:
+        """POST a JSON body (optionally CryptoJS-encrypted) with the bearer token.
+
+        A 401 triggers one token refresh and one retry. Anything other than HTTP 2xx
+        with Status_Code "200" in the body raises FetchError.
+        """
         resp = None
         for attempt in (1, 2):
             self._ensure_token(force=(attempt == 2))
@@ -181,6 +200,7 @@ class SijilatClient:
         return first
 
     def details(self, cr_no: str, branch_no: str, lang: str = "EN") -> dict:
+        """Full details of one branch (the request body is AES-encrypted, the reply is plain JSON)."""
         session_id = self._ensure_session_id(cr_no, branch_no)
         body = build_details_body(cr_no, branch_no, session_id, lang)
         return self._post_api(config.DETAILS_URL, body, encrypted=True, what="details")

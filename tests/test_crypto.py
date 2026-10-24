@@ -1,3 +1,4 @@
+"""CryptoJS-compatible AES: round trip, OpenSSL header, bad input."""
 import pytest
 
 from sijilat.crypto import CryptoError, decrypt_cryptojs, encrypt_cryptojs

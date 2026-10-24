@@ -20,6 +20,8 @@ def _load(path: str) -> dict:
 
 
 def compare(a: dict, b: dict, ignore: set[str]) -> list[str]:
+    """Return human-readable differences: top-level keys, branches present in only one
+    run, and per-branch fields. Branches are matched by branch_id, not by position."""
     diffs = []
     for key in sorted((set(a) | set(b)) - ignore - {"branches"}):
         if a.get(key) != b.get(key):

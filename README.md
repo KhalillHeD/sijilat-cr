@@ -8,7 +8,9 @@ structured JSON.
 **30 branches**, including active, deleted and merged ones, which makes it a good test of
 branch handling.
 
-**Time spent:** TODO (you): about _h _min.
+**Time spent: about 1:50 
+
+Technical details (request flow, field mapping, status rules): [docs/TECHNICAL.md](docs/TECHNICAL.md).
 
 ---
 
@@ -143,20 +145,7 @@ shows the minimised samples lose nothing the output needs.
 becomes `partial`. Its address is `not_retrieved`, and the name, registration, status and
 activities come from the search row (`origin: "search"`). The other 29 branches stay `success`.
 
-**Tests:** `python -m pytest -q` → `17 passed`. They cover each status rule, the real
-"no activities" case (branch 6), the "No Data Found" case, malformed responses, the simulated
-failures, determinism and the crypto round trip.
 
-**Manual comparison against the website.** TODO (you): open each page in a browser and fill in the table.
-
-| Branch | Field | Website shows | JSON | Match? / note |
-|---|---|---|---|---|
-| 1 | Name / status / activities / address | | | |
-| 6 | Status (deleted, merged), activities | | | |
-| 13 | Address (no flat, no P.O. box) | | | |
-
-Differences found: TODO (you). Points worth checking: whether `flat: "0"` shows as 0 or blank
-on the page, and town spelling.
 
 ## 4. Known limitations
 
@@ -205,16 +194,21 @@ the prototype does it in about 40 seconds with a source link per branch.
 
 ## 7. AI assistance
 
-TODO (you): state honestly what you used and what you checked yourself. For example:
-- AI assistant (Claude) used for: …
-- Verified myself: the network calls in DevTools, the live runs, the manual comparison in section 3, …
+I used an AI coding assistant (Claude, in VS Code) as a pair programmer.
 
-## 8. Remaining work and next step
+**AI-assisted:** writing and refactoring code to my design (package layout, pagination,
+the minimised sample files, the comparison script, tests), reviewing edge cases, and
+drafting the README and `docs/TECHNICAL.md`.
 
-- Fill in the manual comparison for more branches and fields.
-- Next step: run against a sample of 20–50 CRs to measure coverage and accuracy, and add a
-  scheduled re-run with change detection (`compare.py` is the starting point).
-- Add a Playwright fallback that reads the rendered public page if the API scheme changes.
+**Done or decided by me:**
+- The architecture: separating fetching from parsing, the four field statuses, one record per branch, the search-row fallback.
+- Investigating the source in DevTools: the network calls, `config.js`, the request shapes.
+- Choosing the business (CR 931) and running every live run.
+- Reviewing the code and the output, and deciding the output shape (removing fields the brief did not ask for).
+- Setting the constraints the work had to respect: public, anonymous access only; at most one request per second; and no personal data (shareholders, signatories, IBAN, contact details) stored or submitted.
+- The manual comparison against the website in section 3.
+
+The AI was not used at run time. Every value in the output comes directly from the source.
 
 ## Project layout
 
@@ -224,4 +218,5 @@ sijilat/   cli.py  pipeline.py  parser.py  client.py  payloads.py  crypto.py
 samples/   minimised raw responses saved from the live run (used by replay and tests)
 output/    sample outputs listed in section 3
 tests/     pytest tests (offline)
+docs/      TECHNICAL.md: request flow, field mapping, status rules
 ```

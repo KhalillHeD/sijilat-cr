@@ -1,1 +1,1 @@
-﻿"""Prototype collector for Bahrain's Sijilat commercial registry."""
+"""Prototype collector for Bahrain's Sijilat commercial registry."""

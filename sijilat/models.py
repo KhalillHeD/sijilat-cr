@@ -40,16 +40,17 @@ class FetchError(Exception):
 
 @dataclass
 class FieldResult:
+    """One output field: its status (see constants above), the value, and why if not ok."""
     status: str
     value: Any = None
     detail: str | None = None
-    origin: str | None = None   # "details" or "search": which endpoint it came from
+    origin: str | None = None   # "search" when the value fell back to the search row
 
     def to_dict(self) -> dict:
         """Lean form: `detail` only when not ok, `origin` only for the search fallback."""
         d: dict = {"status": self.status, "value": self.value}
         if self.detail and self.status != OK:
             d["detail"] = self.detail
-        if self.origin == "search":
-            d["origin"] = "search"
+        if self.origin:
+            d["origin"] = self.origin
         return d

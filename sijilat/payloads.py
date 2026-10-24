@@ -29,6 +29,7 @@ def page_url(cr_no: str, branch_no: str) -> str:
 
 
 def build_search_body(cr_no: str, lang: str = "EN", page: int = 1, per_page: int = 10) -> dict:
+    """Body for AdvanceSearchCR_Paging: a DataTables-style request filtered on CR_NO only."""
     body = {
         "draw": page,
         "columns": [{"data": c, "name": "", "searchable": True, "orderable": False,
@@ -49,6 +50,8 @@ def build_search_body(cr_no: str, lang: str = "EN", page: int = 1, per_page: int
 
 
 def build_details_body(cr_no: str, branch_no: str, session_id: str, lang: str = "EN") -> dict:
+    """Body for CompleteCRDetails, before encryption. The redundant language and menu keys
+    are sent because the browser sends them; anonymous-visitor keys are left empty."""
     body = {
         "cr_no": cr_no,
         "branch_no": branch_no,

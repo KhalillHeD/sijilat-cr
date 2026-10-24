@@ -58,6 +58,7 @@ def _envelope(raw: dict, data) -> dict:
 
 
 def minimise_search(raw):
+    """Search response reduced to Total_Records and the allow-listed keys of each row."""
     data = raw.get("jsonData") if isinstance(raw, dict) else None
     if not isinstance(data, dict):
         return raw
@@ -68,6 +69,8 @@ def minimise_search(raw):
 
 
 def minimise_details(raw):
+    """Details response reduced to the three sections the parser reads, allow-listed keys only.
+    A section missing from the source stays missing; a null section stays null."""
     data = raw.get("jsonData") if isinstance(raw, dict) else None
     if not isinstance(data, dict):
         return raw

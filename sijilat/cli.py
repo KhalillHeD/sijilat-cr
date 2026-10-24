@@ -18,7 +18,9 @@ EXIT_CONFIG = 4
 
 
 def main(argv=None) -> int:
-    ap = argparse.ArgumentParser(description="Collect one company from Bahrain's Sijilat registry.")
+    """Parse arguments, pick the fetcher (live / file replay / simulated failure), run the
+    pipeline, write the JSON and print a one-line summary per branch. Returns the exit code."""
+    ap =argparse.ArgumentParser(description="Collect one company from Bahrain's Sijilat registry.")
     ap.add_argument("--cr", required=True, help="commercial registration number, WITHOUT the branch")
     ap.add_argument("--branch", help="only this branch (default: every branch found)")
     ap.add_argument("--lang", default="EN", choices=["EN", "AR"])

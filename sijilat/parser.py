@@ -25,7 +25,11 @@ _ADDRESS_PARTS = (("flat", "CR_FLAT"), ("building", "CR_BULD"), ("road", "CR_ROA
 
 # ---- small helpers ---------------------------------------------------------------
 def _text(d: dict, key: str) -> tuple[str, str | None]:
+
+
     """Return (state, value). state: ok | missing | blank | badtype."""
+
+    
     if key not in d:
         return "missing", None
     v = d[key]
@@ -40,7 +44,11 @@ def _text(d: dict, key: str) -> tuple[str, str | None]:
 
 
 def _section(data: dict, key: str) -> tuple[dict | None, FieldResult | None]:
+
+
     """Fetch an object section. Returns (section, problem). Exactly one is not None."""
+
+
     if key not in data:
         return None, FieldResult(EXTRACTION_FAILED, detail=f"section '{key}' not in response")
     v = data[key]
@@ -63,11 +71,22 @@ def _to_int(v) -> int | None:
 # ---- search response -------------------------------------------------------------
 @dataclass
 class SearchResult:
+
+
+    """Branch rows from the search, plus the total the source reports (to detect truncation)."""
+
+
     rows: list[dict]
     total: int | None
 
 
 def parse_search(raw) -> SearchResult:
+
+
+    """Validate the search response. Raises ExtractionError if it cannot be trusted, e.g. a
+    row without CR_NO / BRANCH_NO, because then branches could not be told apart."""
+
+
     if not isinstance(raw, dict):
         raise ExtractionError("search response is not an object")
     data = raw.get("jsonData")
@@ -87,9 +106,13 @@ def parse_search(raw) -> SearchResult:
 
 
 def fields_from_search_row(row: dict) -> dict[str, FieldResult]:
+
+
     """Fallback for 4 of the 5 fields when the details call fails (address is not in search)."""
-    en_s, en = _text(row, "CR_LNM")
-    ar_s, ar = _text(row, "CR_ANM")
+
+
+    _, en = _text(row, "CR_LNM")
+    _, ar = _text(row, "CR_ANM")
     out: dict[str, FieldResult] = {}
     out["commercial_name"] = (
         FieldResult(OK, {"en": en, "ar": ar}, origin="search") if (en or ar)
@@ -122,10 +145,7 @@ def _name(summary: dict) -> FieldResult:
         return FieldResult(EXTRACTION_FAILED, detail="name has unexpected type")
     if en is None and ar is None:
         return FieldResult(ABSENT, detail=f"CR_LNM {en_s}, CR_ANM {ar_s}")
-    detail = None
-    if en is None or ar is None:
-        detail = f"English name {en_s}" if en is None else f"Arabic name {ar_s}"
-    return FieldResult(OK, {"en": en, "ar": ar}, detail=detail)
+    return FieldResult(OK, {"en": en, "ar": ar})
 
 
 def _registration(summary: dict) -> FieldResult:
@@ -149,6 +169,9 @@ def _status(summary: dict) -> FieldResult:
 
 
 def _activities(data: dict) -> FieldResult:
+
+    """businessActivities -> list of {activity_code, isic4_code, name}; null/[] is absent."""
+
     if "businessActivities" not in data:
         return FieldResult(EXTRACTION_FAILED, detail="section 'businessActivities' not in response")
     acts = data["businessActivities"]
@@ -170,25 +193,31 @@ def _activities(data: dict) -> FieldResult:
     return FieldResult(OK, items)
 
 
+
 def _address(data: dict) -> FieldResult:
+
+    """commercialAddress -> the seven parts in _ADDRESS_PARTS; absent only if all are blank."""
+
     addr, problem = _section(data, "commercialAddress")
     if problem:
         return problem
-    parts, missing = {}, []
+    parts = {}
     for out_key, src_key in _ADDRESS_PARTS:
         state, value = _text(addr, src_key)
         if state == "badtype":
             return FieldResult(EXTRACTION_FAILED, detail=f"{src_key} has unexpected type")
-        parts[out_key] = value
-        if value is None:
-            missing.append(f"{out_key} ({state})")
+        parts[out_key] = value                      # blank parts stay null in the value
     if all(v is None for v in parts.values()):
         return FieldResult(ABSENT, detail="all address parts blank or missing")
-    return FieldResult(OK, parts, detail=("empty parts: " + ", ".join(missing)) if missing else None)
+    return FieldResult(OK, parts)
 
 
 def parse_details(raw) -> dict[str, FieldResult]:
+
+
     """Never raises. Always returns all five fields, each with a status."""
+
+
     data = raw.get("jsonData") if isinstance(raw, dict) else None
     if not isinstance(data, dict):
         fail = lambda: FieldResult(EXTRACTION_FAILED, detail="'jsonData' missing or not an object")  # noqa: E731
@@ -204,6 +233,4 @@ def parse_details(raw) -> dict[str, FieldResult]:
                       "registration_status": _status(summary)}
         result["business_activities"] = _activities(data)
         result["commercial_address"] = _address(data)
-    for f in result.values():
-        f.origin = "details"
     return {name: result[name] for name in FIELD_NAMES}

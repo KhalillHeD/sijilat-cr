@@ -58,8 +58,10 @@ def _secret(name: str) -> str:
 
 
 def token_hmac_key() -> str:
+    """HMAC key used to build the token password (from the site's public js/config.js)."""
     return _secret("SIJILAT_TOKEN_HMAC_KEY")
 
 
 def aes_passphrase() -> str:
+    """CryptoJS passphrase for the details request body (a literal in the site's public script)."""
     return _secret("SIJILAT_AES_PASSPHRASE")

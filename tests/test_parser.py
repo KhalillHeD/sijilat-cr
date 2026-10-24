@@ -15,6 +15,7 @@ def _sample(name):
 
 
 def _details(**sections):
+    """A small valid details response; override a section by keyword, or pass "DROP" to remove it."""
     base = {
         "company_summary": {"CR_NO": "1", "BRANCH_NO": "1", "CR_LNM": "ACME", "CR_ANM": "أكمي",
                             "STATUS": "ACTIVE"},

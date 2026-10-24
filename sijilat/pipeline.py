@@ -8,7 +8,6 @@ Rules:
 """
 from __future__ import annotations
 
-import logging
 from datetime import datetime, timezone
 
 from . import config
@@ -16,10 +15,10 @@ from .models import (ABSENT, EXTRACTION_FAILED, NOT_RETRIEVED, OK, ExtractionErr
                      FieldResult)
 from .parser import FIELD_NAMES, fields_from_search_row, parse_details, parse_search
 
-log = logging.getLogger(__name__)
-
 
 def _branch_outcome(fields: dict[str, FieldResult]) -> str:
+    """success: every field ok or absent_in_source (the source fully answered);
+    partial: some ok, some not; failed: nothing ok."""
     statuses = [f.status for f in fields.values()]
     if all(s in (OK, ABSENT) for s in statuses):
         return "success"
@@ -43,6 +42,8 @@ def _cross_checks(row: dict, fields: dict[str, FieldResult]) -> list[str]:
 
 
 def _collect_branch(fetcher, cr_no: str, row: dict, lang: str, notes: list) -> dict:
+    """Build one branch record. Never raises: a details failure is recorded in `notes`
+    and the record falls back to the search row."""
     branch_id = str(row["BRANCH_NO"]).strip()
     warnings: list[str] = []
     try:
@@ -51,7 +52,7 @@ def _collect_branch(fetcher, cr_no: str, row: dict, lang: str, notes: list) -> d
         notes.append({"step": "details", "branch_id": branch_id, **exc.to_dict()})
         fields = fields_from_search_row(row)
         fields["commercial_address"] = FieldResult(
-            NOT_RETRIEVED, detail=f"{exc.kind}: {exc.detail}", origin="details")
+            NOT_RETRIEVED, detail=f"{exc.kind}: {exc.detail}")
     else:
         fields = parse_details(raw)
         warnings = _cross_checks(row, fields)

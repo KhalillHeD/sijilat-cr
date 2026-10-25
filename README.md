@@ -8,7 +8,7 @@ structured JSON.
 **30 branches**, including active, deleted and merged ones, which makes it a good test of
 branch handling.
 
-**Time spent: about 1:50 
+**Time spent:** about 1 h 50 min.
 
 Technical details (request flow, field mapping, status rules): [docs/TECHNICAL.md](docs/TECHNICAL.md).
 
@@ -114,7 +114,7 @@ Activities carry both `activity_code` (Sijilat's internal activity ID) and `isic
 - An unknown CR returns `jsonData: []` with "No Data Found." (verified live with CR 99999999), which is treated as `not_found`, not as an error.
 
 **Manual steps:** reading the site's network calls and `config.js` in DevTools; choosing the CR;
-copying the two values into `.env`; the manual comparison in section 3.
+copying the two values into `.env`.
 
 **Politeness and data minimisation:** at most 1 request/second, one retry, identifying
 User-Agent, a hard cap of 20 search pages. Only the five requested fields are read. The live
@@ -146,7 +146,9 @@ shows the minimised samples lose nothing the output needs.
 becomes `partial`. Its address is `not_retrieved`, and the name, registration, status and
 activities come from the search row (`origin: "search"`). The other 29 branches stay `success`.
 
-
+**Not yet verified:** field-level accuracy against the website by hand. The runs above show the
+output is complete, repeatable and identical to the saved source responses; they do not show
+that a person reading the page would record the same values. Section 5 describes that check.
 
 ## 4. Known limitations
 
@@ -159,7 +161,11 @@ activities come from the search row (`origin: "search"`). The other 29 branches 
   names (`AL SEEF/السيف`), inconsistent spelling (`AL-SEEF` vs `AL SEEF`). Nothing is
   normalised or translated.
 - Up to 200 branches (20 search pages); beyond that the run is `partial` with a note.
-- Not tested: Arabic-language mode (`--lang AR`) on all fields; very large CRs; rate limits under load.
+- The per-visit `SessionID` is read once per run and not refreshed. If it expired during a very
+  long run, the remaining branches would fall back to the search row (address `not_retrieved`).
+- Not tested: Arabic-language mode (`--lang AR`) on all fields; very large CRs; rate limits under
+  load. The automated tests cover the parser, pipeline and encryption; the live client
+  (pagination, token refresh, pacing) was checked only through live runs, not unit tests.
 - No scheduled runs, change history or database. Each run is a single JSON snapshot.
 
 ## 5. Value, human review and measurement
@@ -200,17 +206,14 @@ The absent values are not random gaps. In the 14 of 16 I inspected, each one bel
 for Not Renewing the CR". For those branches the source drops the activities, or (once) the
 whole address.
 
-**Manual baseline.** TODO (you): look up 5 branches by hand, with a stopwatch: search, open the
-page, copy the five fields into a sheet. Then check the prototype's output for the same 5.
-
-| | Manual | Prototype + review |
-|---|---|---|
-| Minutes per branch | TODO | 1.5 s collection + TODO review |
-| Field errors (out of 25) | TODO | TODO |
+**Manual baseline (not yet measured).** The next step is to time a person collecting 5 branches
+by hand (search, open the page, copy the five fields into a sheet), then compare their 25 values
+with the prototype's output for the same branches. That gives both the manual minutes per branch
+and a first accuracy figure.
 
 Estimate: *time saved per CR ≈ branches × (manual minutes per branch − review minutes per branch)*.
-Example only, using a placeholder until it is measured: at 2 min by hand and 0.25 min of review per
-branch, CR 931 would take 60 min by hand and about 8 min with the prototype.
+For illustration only (assumed figures, not measured): at 2 min by hand and 0.25 min of review per
+branch, CR 931 would take about 60 min by hand and about 8 min with the prototype.
 
 What this sample does **not** show: accuracy, which needs the manual check above; behaviour on a
 random or much larger sample; and stability over time.
@@ -240,7 +243,6 @@ drafting the README and `docs/TECHNICAL.md`.
 - Choosing the business (CR 931) and running every live run.
 - Reviewing the code and the output, and deciding the output shape (removing fields the brief did not ask for).
 - Setting the constraints the work had to respect: public, anonymous access only; at most one request per second; and no personal data (shareholders, signatories, IBAN, contact details) stored or submitted.
-- The manual comparison against the website in section 3.
 
 The AI was not used at run time. Every value in the output comes directly from the source.
 

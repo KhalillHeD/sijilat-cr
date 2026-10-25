@@ -19,7 +19,7 @@ how each output field maps to the source, and the exact rules behind every statu
 - Pacing: at least 1 s between any two requests (`config.MIN_INTERVAL_SECONDS`).
 - Retries: one retry on a network error or HTTP 5xx; a 401 on the API triggers one token refresh.
 - An API reply counts as successful only with HTTP 2xx **and** `Status_Code == "200"` in the body.
-- CR 931 costs 1 page load + 1 token + 3 search pages + 30 details calls, about 40 s.
+- CR 931 costs 1 page load + 1 token + 3 search pages + 30 details calls, about 35 s (34.2 s measured in `output/benchmark.json`).
 
 ## 2. Code map
 
